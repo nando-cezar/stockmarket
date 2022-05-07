@@ -1,19 +1,19 @@
 #include "../utility/utility.h"
 #include "../model/Sell.h"
 
-Sell* listCreate(void){ return NULL; }
+Sell* listCreateSell(void){ return NULL; }
 
-Sell* listInsert(Sell* l, int q, int v){ 
+Sell* listInsertSell(Sell* l, int q, int v){ 
 
     Sell* new = (Sell*) malloc(sizeof(Sell));
-    new->flag = Active;
+    new->flag = Active_;
     new->quantity = q;
     new->value = v;
     new->next = l;
     return new;
 }
 
-void listUpdate(Sell** l,  int q, int v){ 
+void listUpdateSell(Sell** l,  int q, int v){ 
 
     Sell* new = (Sell*) malloc(sizeof(Sell));
     new->quantity = q;
@@ -22,7 +22,7 @@ void listUpdate(Sell** l,  int q, int v){
     *l = new;
 }
 
-void listRetrieve(Sell* l){
+void listRetrieveSell(Sell* l){
 
     Sell* p;
 
@@ -30,9 +30,9 @@ void listRetrieve(Sell* l){
 
 }
 
-int listEmpty(Sell* l){ return (l == NULL); }
+int listEmptySell(Sell* l){ return (l == NULL); }
 
-Sell* listSearch(Sell* l, int v){
+Sell* listSearchSell(Sell* l, int v){
     Sell* p;
     for(p = l; p != NULL; p = p->next){
         if(p->value == v) return p;
@@ -40,7 +40,7 @@ Sell* listSearch(Sell* l, int v){
     return NULL;
 }
 
-Sell* listDelete(Sell* l, int v){
+Sell* listDeleteSell(Sell* l, int v){
 
     Sell* ant = NULL;
     Sell* p = l;

@@ -10,8 +10,8 @@
     #include <ctype.h>
     #include <time.h>
 
-    enum flagsSystem {Inactive = 0, Active} flagsSystem;
-    enum flagsOffers {Buy = 0, Sell} flagsOffers;
+    enum flagsSystem {Inactive_ = 0, Active_} flagsSystem;
+    enum flagsOffers {Buy_ = 0, Sell_} flagsOffers;
 
     #define MESSAGE_ERROR "\nFalha ao abrir o arquivo ou ponteiro!"
     #define SHARES_PATH "db/shares.txt"

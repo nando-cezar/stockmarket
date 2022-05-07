@@ -2,6 +2,9 @@
 
     #define SHARES_H
 
+    #include "Buy.h"
+    #include "Sell.h"
+
     typedef struct detailsShares {
 
         int flag;

@@ -1,12 +1,12 @@
 #include "../utility/utility.h"
 #include "../model/Offer.h"
 
-Offer* listCreate(void){ return NULL; }
+Offer* listCreateOffer(void){ return NULL; }
 
-Offer* listInsert(Offer* l, int t, char *sg, int q, int v){ 
+Offer* listInsertOffer(Offer* l, int t, char *sg, int q, int v){ 
 
     Offer* new = (Offer*) malloc(sizeof(Offer));
-    new->flag = Active;
+    new->flag = Active_;
     new->type = t;
     strcpy(new->signature, sg);
     new->quantity = q;
@@ -15,7 +15,7 @@ Offer* listInsert(Offer* l, int t, char *sg, int q, int v){
     return new;
 }
 
-void listUpdate(Offer** l,  int t, char *sg, int q, int v){ 
+void listUpdateOffer(Offer** l,  int t, char *sg, int q, int v){ 
 
     Offer* new = (Offer*) malloc(sizeof(Offer));
     new->type = t;
@@ -26,17 +26,17 @@ void listUpdate(Offer** l,  int t, char *sg, int q, int v){
     *l = new;
 }
 
-void listRetrieve(Offer* l){
+void listRetrieveOffer(Offer* l){
 
     Offer* p;
 
-    for(p = l; p != NULL; p = p->next) printf("%s = %d : %d\n", p->signature, p->value, p->quantity);
+    for(p = l; p != NULL; p = p->next) printf("%s = %.2f : %d\n", p->signature, p->value, p->quantity);
 
 }
 
-int listEmpty(Offer* l){ return (l == NULL); }
+int listEmptyOffer(Offer* l){ return (l == NULL); }
 
-Offer* listSearch(Offer* l, int v){
+Offer* listSearchOffer(Offer* l, int v){
     Offer* p;
     for(p = l; p != NULL; p = p->next){
         if(p->value == v) return p;
@@ -44,7 +44,7 @@ Offer* listSearch(Offer* l, int v){
     return NULL;
 }
 
-Offer* listDelete(Offer* l, int v){
+Offer* listDeleteOffer(Offer* l, int v){
 
     Offer* ant = NULL;
     Offer* p = l;
@@ -63,7 +63,7 @@ Offer* listDelete(Offer* l, int v){
     return l;
 }
 
-void listRelease(Offer *l){
+void listReleaseOffer(Offer *l){
 
     Offer* p = l;
 
@@ -74,7 +74,7 @@ void listRelease(Offer *l){
     }
 }
 
-Offer* listInsertSorted(Offer* l, int v){
+Offer* listInsertSortedOffer(Offer* l, int v){
 
     Offer* new;
     Offer* ant = NULL;

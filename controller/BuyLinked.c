@@ -1,19 +1,19 @@
 #include "../utility/utility.h"
 #include "../model/Buy.h"
 
-Buy* listCreate(void){ return NULL; }
+Buy* listCreateBuy(void){ return NULL; }
 
-Buy* listInsert(Buy* l, int q, int v){ 
+Buy* listInsertBuy(Buy* l, int q, int v){ 
 
     Buy* new = (Buy*) malloc(sizeof(Buy));
-    new->flag = Active;
+    new->flag = Active_;
     new->quantity = q;
     new->value = v;
     new->next = l;
     return new;
 }
 
-void listUpdate(Buy** l,  int q, int v){ 
+void listUpdateBuy(Buy** l,  int q, int v){ 
 
     Buy* new = (Buy*) malloc(sizeof(Buy));
     new->quantity = q;
@@ -22,7 +22,7 @@ void listUpdate(Buy** l,  int q, int v){
     *l = new;
 }
 
-void listRetrieve(Buy* l){
+void listRetrieveBuy(Buy* l){
 
     Buy* p;
 
@@ -30,9 +30,9 @@ void listRetrieve(Buy* l){
 
 }
 
-int listEmpty(Buy* l){ return (l == NULL); }
+int listEmptyBuy(Buy* l){ return (l == NULL); }
 
-Buy* listSearch(Buy* l, int v){
+Buy* listSearchBuy(Buy* l, int v){
     Buy* p;
     for(p = l; p != NULL; p = p->next){
         if(p->value == v) return p;
@@ -40,7 +40,7 @@ Buy* listSearch(Buy* l, int v){
     return NULL;
 }
 
-Buy* listDelete(Buy* l, int v){
+Buy* listDeleteBuy(Buy* l, int v){
 
     Buy* ant = NULL;
     Buy* p = l;
@@ -59,7 +59,7 @@ Buy* listDelete(Buy* l, int v){
     return l;
 }
 
-void listRelease(Buy *l){
+void listReleaseBuy(Buy *l){
 
     Buy* p = l;
 
@@ -70,7 +70,7 @@ void listRelease(Buy *l){
     }
 }
 
-Buy* listInsertSorted(Buy* l, int v){
+Buy* listInsertSortedBuy(Buy* l, int v){
 
     Buy* new;
     Buy* ant = NULL;

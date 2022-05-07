@@ -1,0 +1,4 @@
+
+gcc main.c controller/*.c service/*.c view/*.c -o main
+
+./main

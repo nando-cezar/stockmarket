@@ -3,12 +3,12 @@
 #include "../model/Buy.h"
 #include "../model/Sell.h"
 
-Shares* listCreate(void){ return NULL; }
+Shares* listCreateShares(void){ return NULL; }
 
-Shares* listInsert(Shares* l, char *sg, Buy* b, Sell* s){ 
+Shares* listInsertShares(Shares* l, char *sg, Buy* b, Sell* s){ 
 
     Shares* new = (Shares*) malloc(sizeof(Shares));
-    new->flag = Active;
+    new->flag = Active_;
     strcpy(new->signature, sg);
     new->buy = b;
     new->sell = s;
@@ -16,10 +16,10 @@ Shares* listInsert(Shares* l, char *sg, Buy* b, Sell* s){
     return new;
 }
 
-void listUpdate(Shares** l, char *sg, Buy* b, Sell* s){ 
+void listUpdateShares(Shares** l, char *sg, Buy* b, Sell* s){ 
 
     Shares* new = (Shares*) malloc(sizeof(Shares));
-    new->flag = Active;
+    new->flag = Active_;
     strcpy(new->signature, sg);
     new->buy = b;
     new->sell = s;
@@ -27,7 +27,7 @@ void listUpdate(Shares** l, char *sg, Buy* b, Sell* s){
     *l = new;
 }
 
-void listRetrieve(Shares* l){
+void listRetrieveShares(Shares* l){
 
     Shares* p;
 
@@ -35,9 +35,9 @@ void listRetrieve(Shares* l){
 
 }
 
-int listEmpty(Shares* l){ return (l == NULL); }
+int listEmptyShares(Shares* l){ return (l == NULL); }
 
-Shares* listSearch(Shares* l, char *sg){
+Shares* listSearchShares(Shares* l, char *sg){
     Shares* p;
     for(p = l; p != NULL; p = p->next){
         if(strcmp(p->signature, sg)) return p;
@@ -45,7 +45,7 @@ Shares* listSearch(Shares* l, char *sg){
     return NULL;
 }
 
-Shares* listDelete(Shares* l, char *sg){
+Shares* listDeleteShares(Shares* l, char *sg){
 
     Shares* ant = NULL;
     Shares* p = l;
@@ -64,7 +64,7 @@ Shares* listDelete(Shares* l, char *sg){
     return l;
 }
 
-void listRelease(Shares *l){
+void listReleaseShares(Shares *l){
 
     Shares* p = l;
 

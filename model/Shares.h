@@ -12,14 +12,14 @@
 
     } Shares;
 
-    Shares* listCreate(void);
-    Shares* listInsert(Shares* l, char *sg, Buy* b, Sell* s);
-    void listUpdate(Shares** l, char *sg, Buy* b, Sell* s);
-    void listRetrieve(Shares* l);
-    int listEmpty(Shares* l);
-    Shares* listSearch(Shares* l, char *sg);
-    Shares* listDelete(Shares* l, char *sg);
-    void listRelease(Shares *l);
+    Shares* listCreateShares(void);
+    Shares* listInsertShares(Shares* l, char *sg, Buy* b, Sell* s);
+    void listUpdateShares(Shares** l, char *sg, Buy* b, Sell* s);
+    void listRetrieveShares(Shares* l);
+    int listEmptyShares(Shares* l);
+    Shares* listSearchShares(Shares* l, char *sg);
+    Shares* listDeleteShares(Shares* l, char *sg);
+    void listReleaseShares(Shares *l);
  
 #endif
 

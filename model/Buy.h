@@ -5,20 +5,20 @@
     typedef struct detailsBuy {
 
         int flag;
-        float value;
         int quantity;
+        float value;
         struct detailsBuy *next;
 
     } Buy;
 
-    Buy* listCreate(void);
-    Buy* listInsert(Buy* l, int q, int v);
-    void listUpdate(Buy** l, int q, int v);
-    void listRetrieve(Buy* l);
-    int listEmpty(Buy* l);
-    Buy* listSearch(Buy* l, int v);
-    Buy* listDelete(Buy* l, int v);
-    void listRelease(Buy *l);
+    Buy* listCreateBuy(void);
+    Buy* listInsertBuy(Buy* l, int q, int v);
+    void listUpdateBuy(Buy** l, int q, int v);
+    void listRetrieveBuy(Buy* l);
+    int listEmptyBuy(Buy* l);
+    Buy* listSearchBuy(Buy* l, int v);
+    Buy* listDeleteBuy(Buy* l, int v);
+    void listReleaseBuy(Buy *l);
     Buy* listInsertSorted(Buy* l, int v);
  
 #endif

@@ -5,20 +5,20 @@
     typedef struct detailsSell {
 
         int flag;
-        float value;
         int quantity;
+        float value;
         struct detailsSell *next;
 
     } Sell;
 
-    Sell* listCreate(void);
-    Sell* listInsert(Sell* l, int q, int v);
-    void listUpdate(Sell** l, int q, int v);
-    void listRetrieve(Sell* l);
-    int listEmpty(Sell* l);
-    Sell* listSearch(Sell* l, int v);
-    Sell* listDelete(Sell* l, int v);
-    void listRelease(Sell *l);
-    Sell* listInsertSorted(Sell* l, int v);
+    Sell* listCreateSell(void);
+    Sell* listInsertSell(Sell* l, int q, int v);
+    void listUpdateSell(Sell** l, int q, int v);
+    void listRetrieveSell(Sell* l);
+    int listEmptySell(Sell* l);
+    Sell* listSearchSell(Sell* l, int v);
+    Sell* listDeleteSell(Sell* l, int v);
+    void listReleaseSell(Sell *l);
+    Sell* listInsertSortedSell(Sell* l, int v);
  
 #endif

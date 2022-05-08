@@ -1,8 +1,11 @@
 #include "../utility/Utility.h"
 #include "../model/Offer.h"
 #include "../model/input/OfferInput.h"
+#include "../view/Menu.h"
 
 void insertOffer(Offer** l){
+
+    header();
 
     OfferInput offerInput = insertDataOffer();
 
@@ -14,6 +17,8 @@ void insertOffer(Offer** l){
 }
 
 void retrieveOffer(Offer** l){
+
+    header();
 
     listRetrieveOffer(*l);
 

@@ -2,29 +2,76 @@
 #include "../model/Offer.h"
 #include "../model/input/OfferInput.h"
 #include "../global/function/Function.h"
+#include "../global/validation/Validation.h"
 #include "Menu.h"
 
 OfferInput insertDataOffer(){
 
   OfferInput data;
+  int verification, verificationSignature = 0;
 
-  printf("Informe ação deseja: ");
-  fgets(data.signature, MAX_SIG, stdin);
-  removeBreakLine(data.signature);
+  do{
 
-  printf("Informe tipo de operação: ");
-  scanf(" %c", &data.type);
-  getchar();
+    do{
+      printf("Informe ação deseja: ");
+      fgets(data.signature, MAX_SIG, stdin);
+      removeBreakLine(data.signature);
 
-  printf("Informe quantidade: ");
-  scanf("%d", &data.quantity);
-  getchar();
+      verification = validateSignature(data.signature);
 
-  printf("Informe valor: ");
-  scanf("%f", &data.value);
-  getchar();
+    if(!verification)
+      printf("\nInforme codigo da ação válido!\n");
 
-  //int t, char *sg, int q, int v;
+    }while(!verification);
+
+    verificationSignature = isExistingSignature(data.signature);
+
+    if(!verificationSignature){  /* Logic implement */ }
+    else{ textToUpper(data.signature); }
+      
+  }while (!verificationSignature);
+      
+
+  do{
+    printf("Informe tipo de operação: ");
+    scanf(" %c", &data.type);
+    getchar();
+    
+    verification = validateOperation(data.type);
+
+    if(!verification)
+      printf("\nInforme tipo de operação válida!\n");
+    else
+      data.type = toupper(data.type);
+
+  }while(!verification);
+
+  do{
+    
+    printf("Informe quantidade: ");
+    scanf("%d", &data.quantity);
+    getchar();
+    
+    verification = validateNumber(data.quantity);
+
+    if(!verification)
+      printf("\nInforme tipo de operação válida!\n");
+
+  }while(!verification);
+
+  do{
+    
+    printf("Informe valor: ");
+    scanf("%f", &data.value);
+    getchar();
+    
+    verification = validateNumber(data.value);
+
+    if(!verification)
+      printf("\nInforme tipo de operação válida!\n");
+
+  }while(!verification);
+
   return data;
 }
 
@@ -40,9 +87,9 @@ void mainOffer(){
     header();
     printf("1. Inserir oferta;\n"); 
     printf("2. Listar oferta especifica;\n"); 
-    printf("3. Listar todas as ofertas;\n"); // Progress
-    printf("4. Listar operações concluídas;\n"); //OK
-    printf("5. ;\n"); //OK
+    printf("3. Listar todas as ofertas;\n"); 
+    printf("4. Listar operações concluídas;\n"); 
+    //printf("5. ;\n"); 
     printf("6. Sair;\n");
     printf("\nEscolha uma opção: ");
     scanf("%d", &option);

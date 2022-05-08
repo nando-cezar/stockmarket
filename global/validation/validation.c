@@ -14,3 +14,15 @@ int validateOperation(char operation){
     }
     return 0;
 }
+
+int validateSignature(char *signature){
+    return 1;
+}
+
+int isExistingSignature(char *signature){ 
+    return 1;
+}
+
+int validateNumber(int number){
+    return 1;
+}

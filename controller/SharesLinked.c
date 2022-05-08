@@ -5,7 +5,7 @@
 
 Shares* listCreateShares(void){ return NULL; }
 
-Shares* listInsertShares(Shares* l, char *sg, Buy* b, Sell* s){ 
+Shares* listInsertShares(Shares* l, char*n, char* st, char *sg, Buy* b, Sell* s){ 
 
     Shares* new = (Shares*) malloc(sizeof(Shares));
     new->flag = Active_;
@@ -16,7 +16,7 @@ Shares* listInsertShares(Shares* l, char *sg, Buy* b, Sell* s){
     return new;
 }
 
-void listUpdateShares(Shares** l, char *sg, Buy* b, Sell* s){ 
+void listUpdateShares(Shares** l, char*n, char* st, char *sg, Buy* b, Sell* s){ 
 
     Shares* new = (Shares*) malloc(sizeof(Shares));
     new->flag = Active_;
@@ -74,3 +74,24 @@ void listReleaseShares(Shares *l){
         p = t;
     }
 }
+
+/*void dataFile(){
+
+    int name[255];
+    int sector[50];
+
+    FILE *file = fopen("db/shares.txt", "r");
+
+    if(file == NULL){
+        printf(MESSAGE_ERROR);
+        exit(1);
+    }else{
+
+        while(!feof(file)){
+            fscanf(file, "%s :%s", name, sector);
+            printf("%s - %s", name, sector);
+        }
+    }
+
+    fclose(file);
+}*/

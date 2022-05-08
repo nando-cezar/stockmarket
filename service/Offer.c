@@ -11,6 +11,7 @@ void insertOffer(Offer** l){
 
     *l = listInsertOffer(*l, offerInput);
 
+    dataFile();
     //listRetrieveOffer(*l);
 
     getchar();

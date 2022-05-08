@@ -4,10 +4,11 @@
 
     #include "Buy.h"
     #include "Sell.h"
-
+    #include "../utility/Utility.h"
+    
     typedef struct detailsShares {
 
-        int flag;
+        typeStatus flag;
         char signature[10];
         struct detailsBuy *buy;
         struct detailsSell *sell;

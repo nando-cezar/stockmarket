@@ -2,9 +2,11 @@
 
     #define SELL_H
 
+    #include "../utility/Utility.h"
+    
     typedef struct detailsSell {
 
-        int flag;
+        typeStatus flag;
         int quantity;
         float value;
         struct detailsSell *next;

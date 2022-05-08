@@ -10,8 +10,10 @@
     #include <ctype.h>
     #include <time.h>
 
-    enum flagsSystem {Inactive_ = 0, Active_} flagsSystem;
-    enum flagsOffers {Buy_ = 0, Sell_} flagsOffers;
+    typedef enum flagsStatus {Inactive_ = 0, Active_} typeStatus;
+    typedef enum flagsOffers {Buy_ = 0, Sell_} typeOffers;
+
+    #define MAX_SIG 8
 
     #define MESSAGE_ERROR "\nFalha ao abrir o arquivo ou ponteiro!"
     #define SHARES_PATH "db/shares.txt"

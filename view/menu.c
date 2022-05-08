@@ -1,5 +1,5 @@
 #include "../utility/utility.h"
-#include "mainOffer.h"
+#include "Offer.h"
 
 void logo(){
 
@@ -22,7 +22,7 @@ void header(){
     system(CLEAR);
 
     printf("****************************************************\n");
-    printf("\t ..:: MONEY INVEST | SISTEMA FINANCEIRO ::..\n");
+    printf("\t ..:: MONEY INVEST | FINANCIAL SYSTEM ::..\n");
     printf("****************************************************\n\n");
 }
 

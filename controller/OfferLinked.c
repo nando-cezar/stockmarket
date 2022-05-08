@@ -3,25 +3,25 @@
 
 Offer* listCreateOffer(void){ return NULL; }
 
-Offer* listInsertOffer(Offer* l, int t, char *sg, int q, int v){ 
+Offer* listInsertOffer(Offer* l, OfferInput offerInput){ 
 
     Offer* new = (Offer*) malloc(sizeof(Offer));
     new->flag = Active_;
-    new->type = t;
-    strcpy(new->signature, sg);
-    new->quantity = q;
-    new->value = v;
+    new->type = offerInput.type;
+    strcpy(new->signature, offerInput.signature);
+    new->quantity = offerInput.quantity;
+    new->value = offerInput.value;
     new->next = l;
     return new;
 }
 
-void listUpdateOffer(Offer** l,  int t, char *sg, int q, int v){ 
+void listUpdateOffer(Offer** l,  OfferInput offerInput){ 
 
     Offer* new = (Offer*) malloc(sizeof(Offer));
-    new->type = t;
-    strcpy(new->signature, sg);
-    new->quantity = q;
-    new->value = v;
+    new->type = offerInput.type;
+    strcpy(new->signature, offerInput.signature);
+    new->quantity = offerInput.quantity;
+    new->value = offerInput.value;
     new->next = *l;
     *l = new;
 }

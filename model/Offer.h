@@ -2,10 +2,14 @@
 
     #define OFFER_H
 
+    #include "../utility/Utility.h"
+    
+    #include "input/OfferInput.h"
+
     typedef struct detailsOffer {
 
-        int flag;
-        int type;
+        typeStatus flag;
+        typeOffers type;
         int quantity;
         float value;
         char signature[10];
@@ -15,8 +19,8 @@
 
     /* Controller */
     Offer* listCreateOffer(void);
-    Offer* listInsertOffer(Offer* l, int t, char *sg, int q, int v);
-    void listUpdateOffer(Offer** l,  int t, char *sg, int q, int v);
+    Offer* listInsertOffer(Offer* l, OfferInput offerInput);
+    void listUpdateOffer(Offer** l, OfferInput offerInput);
     void listRetrieveOffer(Offer* l);
     int listEmptyOffer(Offer* l);
     Offer* listSearchOffer(Offer* l, int v);

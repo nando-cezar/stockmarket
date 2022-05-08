@@ -1,13 +1,14 @@
 #include "../utility/Utility.h"
 #include "../model/Offer.h"
+#include "../model/input/OfferInput.h"
 
 void insertOffer(Offer** l){
 
-    *l = listInsertOffer(*l, 0, "MGLU3", 500, 5.00);
-    *l = listInsertOffer(*l, 0, "MGLU3", 500, 5.00);
-    *l = listInsertOffer(*l, 0, "MGLU3", 500, 5.00);
+    OfferInput offerInput = insertDataOffer();
 
-    listRetrieveOffer(*l);
+    *l = listInsertOffer(*l, offerInput);
+
+    //listRetrieveOffer(*l);
 
     getchar();
 }

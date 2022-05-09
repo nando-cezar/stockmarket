@@ -31,7 +31,6 @@
     /* Service */
     void insertOffer(Offer** l);
     void retrieveOffer(Offer** l);
-
-    void dataFile();
+    void dataFileOffer(Offer* l);
  
 #endif

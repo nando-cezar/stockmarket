@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "offer.h": "c"
+        "offer.h": "c",
+        "shares.h": "c",
+        "offerinput.h": "c"
     }
 }

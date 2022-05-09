@@ -5,24 +5,28 @@
 
 Shares* listCreateShares(void){ return NULL; }
 
-Shares* listInsertShares(Shares* l, char*n, char* st, char *sg, Buy* b, Sell* s){ 
+Shares* listInsertShares(Shares* l, SharesInput sharesInput){ 
 
     Shares* new = (Shares*) malloc(sizeof(Shares));
     new->flag = Active_;
-    strcpy(new->signature, sg);
-    new->buy = b;
-    new->sell = s;
+    strcpy(new->name, sharesInput.name);
+    strcpy(new->sector, sharesInput.sector);
+    strcpy(new->signature, sharesInput.signature);
+    new->buy = listCreateBuy();
+    new->sell = listCreateSell();
     new->next = l;
     return new;
 }
 
-void listUpdateShares(Shares** l, char*n, char* st, char *sg, Buy* b, Sell* s){ 
+void listUpdateShares(Shares** l, SharesInput sharesInput){ 
 
     Shares* new = (Shares*) malloc(sizeof(Shares));
     new->flag = Active_;
-    strcpy(new->signature, sg);
-    new->buy = b;
-    new->sell = s;
+    strcpy(new->name, sharesInput.name);
+    strcpy(new->sector, sharesInput.sector);
+    strcpy(new->signature, sharesInput.signature);
+    new->buy = listCreateBuy();
+    new->sell = listCreateSell();
     new->next = *l;
     *l = new;
 }
@@ -31,7 +35,7 @@ void listRetrieveShares(Shares* l){
 
     Shares* p;
 
-    for(p = l; p != NULL; p = p->next) printf("info = %d\n", p->signature);
+    for(p = l; p != NULL; p = p->next) printf("\nNome = %s\nSetor = %s\nSigla = %s\n", p->name, p->sector, p->signature);
 
 }
 
@@ -74,24 +78,3 @@ void listReleaseShares(Shares *l){
         p = t;
     }
 }
-
-/*void dataFile(){
-
-    int name[255];
-    int sector[50];
-
-    FILE *file = fopen("db/shares.txt", "r");
-
-    if(file == NULL){
-        printf(MESSAGE_ERROR);
-        exit(1);
-    }else{
-
-        while(!feof(file)){
-            fscanf(file, "%s :%s", name, sector);
-            printf("%s - %s", name, sector);
-        }
-    }
-
-    fclose(file);
-}*/

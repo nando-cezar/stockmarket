@@ -1,5 +1,6 @@
 #include "../utility/Utility.h"
 #include "../model/Offer.h"
+#include "../model/Shares.h"
 #include "../model/input/OfferInput.h"
 #include "../global/function/Function.h"
 #include "../global/validation/Validation.h"
@@ -85,6 +86,7 @@ void mainOffer(){
 
   do{
     header();
+    dataFileOffer(offers);
     printf("1. Inserir oferta;\n"); 
     printf("2. Listar oferta especifica;\n"); 
     printf("3. Listar todas as ofertas;\n"); 

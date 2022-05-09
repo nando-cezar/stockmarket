@@ -30,7 +30,7 @@ void listRetrieveOffer(Offer* l){
 
     Offer* p;
 
-    for(p = l; p != NULL; p = p->next) printf("%s = %.2f : %d\n", p->signature, p->value, p->quantity);
+    for(p = l; p != NULL; p = p->next) printf("%s = %d, %d, %.2f\n", p->signature, p->type, p->quantity, p->value);
 
 }
 
@@ -99,56 +99,4 @@ Offer* listInsertSortedOffer(Offer* l, int v){
         ant->next = new;
     }
     return l;
-}
-
-void dataFile(){
-
-    char fileInit[500];
-
-    char fullName[255];
-    char sector[50];
-    char signature[10];
-
-    int count;
-
-    FILE *file = fopen("db/shares.txt", "r");
-
-    if(file == NULL){
-        printf(MESSAGE_ERROR);
-        exit(1);
-    }else{
-
-        while(fgets(fileInit, 255, file) != NULL){
-            count = 0;
-            //printf(">> %s", fileInit);
-            printf("\n");
-            for(int i = 0; i < strlen(fileInit); i++){
-                if(fileInit[i] != ':'){
-                    fullName[i] = fileInit[i];
-                    printf("%c", fullName[i]);
-                    count++;
-                }else{
-                    break;
-                }
-            }
-            printf("\n");
-            for(int i = count+1; i < strlen(fileInit); i++){
-                if(fileInit[i] != ':'){
-                    sector[i] = fileInit[i];
-                    printf("%c", sector[i]);
-                    count++;
-                }else{
-                    break;
-                }
-            }
-            printf("\n");
-            for(int i = count+2; i < strlen(fileInit); i++){
-                signature[i] = fileInit[i];
-                printf("%c", signature[i]);
-            }
-        }
-    }
-
-
-    fclose(file);
 }

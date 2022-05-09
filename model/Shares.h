@@ -2,9 +2,11 @@
 
     #define SHARES_H
 
+    #include "../utility/Utility.h"
+
+    #include "input/SharesInput.h"
     #include "Buy.h"
     #include "Sell.h"
-    #include "../utility/Utility.h"
     
     typedef struct detailsShares {
 
@@ -18,14 +20,18 @@
 
     } Shares;
 
+    /* Controller */
     Shares* listCreateShares(void);
-    Shares* listInsertShares(Shares* l, char*n, char* st, char *sg, Buy* b, Sell* s);
-    void listUpdateShares(Shares** l, char*n, char* st, char *sg, Buy* b, Sell* s);
+    Shares* listInsertShares(Shares* l, SharesInput sharesInput);
+    void listUpdateShares(Shares** l, SharesInput sharesInput);
     void listRetrieveShares(Shares* l);
     int listEmptyShares(Shares* l);
     Shares* listSearchShares(Shares* l, char *sg);
     Shares* listDeleteShares(Shares* l, char *sg);
     void listReleaseShares(Shares *l);
+
+    /* Service */
+    void dataFileShares(Shares* l);
  
 #endif
 

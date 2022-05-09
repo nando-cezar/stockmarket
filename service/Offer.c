@@ -11,9 +11,6 @@ void insertOffer(Offer** l){
 
     *l = listInsertOffer(*l, offerInput);
 
-    dataFile();
-    //listRetrieveOffer(*l);
-
     getchar();
 }
 
@@ -24,5 +21,96 @@ void retrieveOffer(Offer** l){
     listRetrieveOffer(*l);
 
     getchar();
+}
+
+void clearVectorOffer(char *str, int count){ 
+    for(int i=0; i < count; i++){
+        str[i] = '\0';
+    }
+}
+
+void dataFileOffer(Offer* s){
+
+    char fileInit[512];
+
+    OfferInput offerInput;
+
+    int counter;
+
+    FILE *file = fopen("db/offer.txt", "r");
+
+    if(file == NULL){
+        printf(MESSAGE_ERROR);
+        exit(1);
+    }else{
+
+        while(fgets(fileInit, 512, file) != NULL){
+            counter = 0;
+            clearVectorOffer(offerInput.signature, 10);
+            offerInput.type = Null_;
+            offerInput.quantity = 0;
+            offerInput.value = 0;
+
+            for(int i = 0, j = 0; i < strlen(fileInit); i++){
+                if(fileInit[i] != ':'){
+                    offerInput.signature[j] = fileInit[i];
+                    j++;
+                    counter++;
+                }else{
+                    break;
+                }
+            }
+
+            for(int i = counter+1; i < strlen(fileInit); i++){ // 6
+                if(fileInit[i] != ':'){
+                    counter++;
+                    offerInput.type = pow(fileInit[i] - '0', 1);
+                }else{
+                    break;
+                }
+            }
+
+            for(int i = counter+2, n = 0, w = counter+2; i < strlen(fileInit); i++){ //8
+                if(fileInit[i] != ':'){
+                    counter++;
+                    n++;
+                }else{
+                    for(int j = n; j > 0; j--){
+                        if(fileInit[w] - '0' > 0){
+                            offerInput.quantity += ((fileInit[w] - '0') * (int)(pow(10, j-1) + 0.5));
+                            w++;
+                        }
+                    }
+                    break;
+                }
+            }
+            
+            int n = 0, w = counter+3;
+
+            for(int i = counter+3; i < strlen(fileInit)-1; i++){
+                if(fileInit[i] != ':'){
+                    counter++;
+                    n++;
+                }else{
+                    break;
+                }
+            }
+
+            for(int j = n; j > 0; j--){
+                if(fileInit[w] - '0' > 0){
+                    offerInput.value += ((fileInit[w] - '0') * (int)(pow(10, j-1) + 0.5));
+                    w++;
+                }
+            }
+            //printf("%s:%d:%d:%.2f\n", offerInput.signature, offerInput.type, offerInput.quantity, offerInput.value);
+  
+            s = listInsertOffer(s, offerInput);
+        }
+
+        listRetrieveOffer(s);
+    }
+
+
+    fclose(file);
 }
 

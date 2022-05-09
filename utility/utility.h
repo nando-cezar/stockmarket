@@ -8,10 +8,11 @@
     #include <unistd.h>
     #include <locale.h>
     #include <ctype.h>
+    #include <math.h>
     #include <time.h>
 
     typedef enum flagsStatus {Inactive_ = 0, Active_} typeStatus;
-    typedef enum flagsOffers {Buy_ = 0, Sell_} typeOffers;
+    typedef enum flagsOffers {Buy_ = 0, Sell_, Null_} typeOffers;
 
     #define MAX_SIG 8
 

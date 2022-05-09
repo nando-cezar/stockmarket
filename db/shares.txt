@@ -1,126 +1,126 @@
-3R Petroleum Óleo e Gás S.A	Petróleo.               :Gás e Biocombustíveis	        :RRRP3
-Aeris Ind. e Com. ee Equip. Geração e Energia S/A	:Bens Industriais	            :AERI3
-Aes Brasil	                                        :Elétrica	                    :AESB3
-Allied	                                            :Varejista	                    :ALLD3
-Allpark Empreendimentos Participações Serviços S.A	:Bens Industriais	            :ALPK3
-Alphaville S.A.	                                    :Construção	                    :AVLL3
-Ambipar Participações E Empreendimentos S/A	        :Construção	                    :AMBP3
-Assaí	                                            :Varejista	                    :ASAI3
-Bemobi Tech	                                        :Tecnologia	                    :BMOB3
-Boa Vista Serviços S.A.	                            :Serviços Financeiros	        :BOAS3
-Cruzeiro Do Sul Educacional	Serviços                :Educacionais	                :CSED3
-CSN Mineração	                                    :Mineração	                    :CMIN3
-Cury Construtora E Incorporadora S.A	            :Construção	                    :CURY3
-D1000 Varejo Farma Participações S.A.	            :Saúde	                        :DMVF3
-Eletromidia	                                        :Publicidade e Propaganda	    :ELMD3
-Empreendimentos Pague Menos S.A.	                :Saúde	                        :PGMN3
-Enjoei.Com.Br Atividades De Internet S.A.	        :Tecnologia	                    :ENJU3
-Espacolaser	                                        :Varejista	                    :ESPA3
-Focus Energia	                                    :Elétrica	                    :POWE3
-Grupo de Moda Soma S.A.	                            :Varejo	                        :SOMA3
-Grupo Mateus S.A.	                                :Varejo	                        :GMAT3
-HBR Realty	                                        :Incorporadora	                :HBRE3
-Hidrovias do Brasil S.A.	                        :Infraestrutura e Logística	    :HBSA3
-Intelbras	                                        :Tecnologia	                    :INTB3
-Jalles Machado	                                    :Agrícola	                    :JALL3
-Lavvi Empreendimentos Imobiliários S.A.	            :Construção	                    :LAVV3
-Locaweb Serviços De Internet S.A.	                :Tecnologia	                    :LWSA3
-Lojas Quero-Quero S/A	                            :Varejo	                        :LJQQ3
-Méliuz S.A.	                                        :Tecnologia	                    :CASH3
-Melnick Desenvolvimento Imobiliário S.A.	        :Construção	                    :MELK3
-Mitre Realty Empreendimentos E Participações S.A.	:Construção	                    :MTRE3
-Mobly	                                            :Varejista	                    :MBLY3
-Mosaico	                                            :Tecnologia	                    :MOSI3
-Moura Dubeux Engenharia S.A.	                    :Construção	                    :MDNE3
-Neogrid Participações S.A	                        :Tecnologia	                    :NGRD3
-Oceanpact	                                        :Engenharia	                    :OPCT3
-Orizon	                                            :Saneamento	                    :ORVR3
-Pet Center Comercio E Participações S.A.	        :Varejo	                        :PETZ3
-Plano & Plano Desenvolvimento Imobiliário S.A.	    :Construção	                    :PLPL3
-Rede Dor São Luiz S.A	                            :Saúde	                        :RDOR3
-Sequoia Logística E Transportes S.A	                :Infraestrutura e Logística	    :SEQL3
-Simpar S.A.	Serviços                                :Financeiros	                :SEQL3
-Track & Field Co S.A	                            :Varejo	                        :TFCO4
-Vamos	                                            :Aluguel de Veículos	        :VAMO3
-Westwing	                                        :Varejista	                    :WEST3
-AMBEV S/A	                                        :Alimentos                      :ABEV3
-ASSAI	                                            :Varejo                         :ASAI3
-AZUL	                                            :Companhia aérea                :AZUL4
-B2W DIGITAL	                                        :Varejo                         :BTOW3
-B3	                                                :Seguros                        :B3SA3
-BB SEGURIDADE	                                    :Seguros                        :BBSE3
-BR MALLS PAR	                                    :Shopping Centers               :VRML3
-BRADESCO	                                        :Financeiro                     :BBDC4
-BRADESCO	                                        :Financeiro                     :BBDC3
-BRADESPAR	                                        :Mineração                      :BRAP4
-BANCO DO BRASIL	                                    :Financeiro                     :BBAS3
-BRASKEM	                                            :Químicos                       :BRKM5
-BRF S/A	                                            :Alimentos                      :BRFS3
-CARREFOUR BR	                                    :Varejo                         :CRFB3
-CCR S/A	                                            :Bens industriais               :CCRO3
-CEMIG	                                            :Energia elétrica               :CMIG4
-CIA HERING	                                        :Varejo                         :HGTX3
-CIELO	                                            :Financeiro                     :CIEL3
-COGNA ON	                                        :Educação                       :COGN3
-COPEL	                                            :Energia Elétrica               :CPLE6
-COSAN	                                            :Alimentos                      :CSAN3
-CPFL ENERGIA	                                    :Energia Elétrica               :CPFE3
-CVC BRASIL	                                        :Viagens e lazer                :CVCB3
-CYRELA REALT	                                    :Construção civil               :CYRE3
-ECORODOVIAS	                                        :Bens industriais               :ECOR3
-ELETROBRAS	                                        :Energia elétrica               :ELET3
-ELETROBRAS	                                        :Energia Elétrica               :ELET6
-EMBRAER	                                            :Bens industriais               :EMBR3
-ENERGIAS BR	                                        :Energia elétrica               :ENBR3
-ENERGISA	                                        :Energia elétrica               :ENGI11
-ENEVA	                                            :Energia elétrica               :ENEV3
-ENGIE BRASIL	                                    :Energia elétrica               :ENGIE3
-EQUATORIAL	                                        :Energia elétrica               :EQTL3
-EZTEC	                                            :Construção                     :EZTC3
-FLEURY	                                            :Saúde                          :FLRY3
-GERDAU	                                            :Siderurgia e Metalurgia        :GGBR4
-GERDAU MET	                                        :Siderurgia e Metalurgia        :GOAU4
-GOL	                                                :Bens industriais               :GOLL4
-GRUPO NATURA	                                    :Varejo                         :NTCO3
-HAPVIDA	                                            :Saúde                          :HAPV3
-HYPERA	                                            :Varejo                         :HYPE3
-IGUATEMI	                                        :Exploração de imóveis          :IGTA3
-INTERMEDICA	                                        :Saúde                          :GNDI3
-IRB BRASIL RE	                                    :Seguros                        :IRBR3
-ITAUSA	                                            :Financeiro                     :ITSA4
-ITAU UNIBANCO	                                    :Financeiro                     :ITUB4
-JBS	                                                :Alimentos                      :JBSS3
-JHSF PART	                                        :Construção                     :JHSF3
-KLABIN S/A	                                        :Madeira e papel                :KLBN11
-LOCALIZA	                                        :Locação de veículos            :RENT3
-LOCAMERICA	                                        :Aluguel de Veículos            :LCAM3
-LOJAS AMERICANAS	                                :Varejo                         :LAME4
-LOJAS RENNER	                                    :Varejo                         :LREN3
-MAGAZINE LUIZA	                                    :Varejo                         :MGLU3
-MARFRIG	                                            :Alimentos                      :MRFG3
-MINERVA	                                            :Alimento                       :BEEF3
-MRV	                                                :Construção civil               :MRVE3
-MULTIPLAN	                                        :Shopping Centers               :MULT3
-PÃO DE AÇÚCAR - CBD	                                :Varejo                         :PCAR3
-PETROBRAS	                                        :Petróleo e Gás                 :PETR3
-PETROBRAS	                                        :Petróleo e Gás                 :PETR4
-PETROBRAS BR	                                    :Petróleo e Gás                 :BRDT3
-PETRORIO	                                        :Petróleo e Gás                 :PRIO3
-QUALICORP	                                        :Saúde                          :QUAL3
-RAIADROGASIL	                                    :Saúde                          :RADL3
-RUMO S/A	                                        :Bens industriais               :RAIL3
-SABESP	                                            :Saneamento                     :SBSP3
-SANTANDER BR	                                    :Financeiro                     :SANB11
-SID NACIONAL	                                    :Siderurgia e Metalurgia        :CSNA3
-SUL AMERICA	                                        :Seguros                        :SULA11
-SUZANO S/A	                                        :Madeira e papel                :SUZB5
-TAESA	                                            :Energia elétrica               :TAEE11
-TELEF BRASIL	                                    :Telecomunicações               :VIVT4
-TIM 	                                            :Telecomunicações               :TIMP3
-TOTVS	                                            :Tecnologia                     :TOTS3
-ULTRAPAR	                                        :Petróleo e Gás                 :UGPA3
-USIMINAS	                                        :Siderurgia e Metalurgia        :USIM5
-VALE	                                            :Mineração                      :VALE3
-VIA VAREJO	                                        :Comérci                        :VVAR3
-WEG	                                                :Bens Industriais               :WEGE3
-YDUQS PART	                                        :Educação                       :YDUQ3
+3R Petroleum Óleo e Gás S/A:Gás e Biocombustíveis:RRRP3
+Aeris Ind. e Com. de Equip. Geração e Energia S/A:Bens Industriais:AERI3
+Aes Brasil:Elétrica:AESB3
+Allied:Varejista:ALLD3
+Allpark Empreendimentos Participações Serviços S.A:Bens Industriais:ALPK3
+Alphaville S.A.:Construção:AVLL3
+Ambipar Participações E Empreendimentos S/A:Construção:AMBP3
+Assaí:Varejista:ASAI3
+Bemobi Tech:Tecnologia:BMOB3
+Boa Vista Serviços S.A:Serviços Financeiros:BOAS3
+Cruzeiro Do Sul Educacional	Serviços:Educacionais:CSED3
+CSN Mineração:Mineração:CMIN3
+Cury Construtora E Incorporadora S.A:Construção:CURY3
+D1000 Varejo Farma Participações S.A.:Saúde:DMVF3
+Eletromidia:Publicidade e Propaganda:ELMD3
+Empreendimentos Pague Menos S.A.:Saúde:PGMN3
+Enjoei.Com.Br Atividades De Internet S.A.:Tecnologia:ENJU3
+Espacolaser:Varejista:ESPA3
+Focus Energia:Elétrica:POWE3
+Grupo de Moda Soma S.A.:Varejo:SOMA3
+Grupo Mateus S.A.:Varejo:GMAT3
+HBR Realty:Incorporadora:HBRE3
+Hidrovias do Brasil S.A.:Infraestrutura e Logística:HBSA3
+Intelbras:Tecnologia:INTB3
+Jalles Machado:Agrícola:JALL3
+Lavvi Empreendimentos Imobiliários S.A.:Construção:LAVV3
+Locaweb Serviços De Internet S.A.:Tecnologia:LWSA3
+Lojas Quero-Quero S/A:Varejo:LJQQ3
+Méliuz S.A.:Tecnologia:CASH3
+Melnick Desenvolvimento Imobiliário S.A.:Construção:MELK3
+Mitre Realty Empreendimentos E Participações S.A:Construção:MTRE3
+Mobly:Varejista:MBLY3
+Mosaico:Tecnologia:MOSI3
+Moura Dubeux Engenharia S.A.:Construção:MDNE3
+Neogrid Participações S.A:Tecnologia:NGRD3
+Oceanpact:Engenharia:OPCT3
+Orizon:Saneamento:ORVR3
+Pet Center Comercio E Participações S.A:Varejo:PETZ3
+Plano & Plano Desenvolvimento Imobiliário S.A:Construção:PLPL3
+Rede Dor São Luiz S.A:Saúde:RDOR3
+Sequoia Logística E Transportes S.A:Infraestrutura e Logística:SEQL3
+Simpar S.A.	Serviços:Financeiros:SEQL3
+Track & Field Co S.A:Varejo:TFCO4
+Vamos:Aluguel de Veículos:VAMO3
+Westwing:Varejista:WEST3
+AMBEV S/A:Alimentos:ABEV3
+ASSAI:Varejo:ASAI3
+AZUL:Companhia aérea:AZUL4
+B2W DIGITAL:Varejo:BTOW3
+B3:Seguros:B3SA3
+BB SEGURIDADE:Seguros:BBSE3
+BR MALLS PAR:Shopping Centers:VRML3
+BRADESCO:Financeiro:BBDC4
+BRADESCO:Financeiro:BBDC3
+BRADESPAR:Mineração:BRAP4
+BANCO DO BRASIL:Financeiro :BBAS3
+BRASKEM:Químicos:BRKM5
+BRF S/A:Alimentos:BRFS3
+CARREFOUR BR:Varejo:CRFB3
+CCR S/A:Bens industriais:CCRO3
+CEMIG:Energia elétrica:CMIG4
+CIA HERING:Varejo:HGTX3
+CIELO:Financeiro:CIEL3
+COGNA ON:Educação:COGN3
+COPEL:Energia Elétrica:CPLE6
+COSAN:Alimentos:CSAN3
+CPFL ENERGIA:Energia Elétrica:CPFE3
+CVC BRASIL:Viagens e lazer:CVCB3
+CYRELA REALT:Construção civil:CYRE3
+ECORODOVIAS:Bens industriais:ECOR3
+ELETROBRAS:Energia elétrica:ELET3
+ELETROBRAS:Energia Elétrica:ELET6
+EMBRAER:Bens industriais:EMBR3
+ENERGIAS BR:Energia elétrica:ENBR3
+ENERGISA:Energia elétrica:ENGI11
+ENEVA:Energia elétrica:ENEV3
+ENGIE BRASIL:Energia elétrica:ENGIE3
+EQUATORIAL:Energia elétrica:EQTL3
+EZTEC:Construção:EZTC3
+FLEURY:Saúde:FLRY3
+GERDAU:Siderurgia e Metalurgia:GGBR4
+GERDAU MET:Siderurgia e Metalurgia:GOAU4
+GOL:Bens industriais:GOLL4
+GRUPO NATURA:Varejo:NTCO3
+HAPVIDA:Saúde:HAPV3
+HYPERA:Varejo:HYPE3
+IGUATEMI:Exploração de imóveis:IGTA3
+INTERMEDICA:Saúde:GNDI3
+IRB BRASIL RE:Seguros:IRBR3
+ITAUSA:Financeiro:ITSA4
+ITAU UNIBANCO:Financeiro:ITUB4
+JBS:Alimentos:JBSS3
+JHSF PART:Construção:JHSF3
+KLABIN S/A:Madeira e papel:KLBN11
+LOCALIZA:Locação de veículos:RENT3
+LOCAMERICA:Aluguel de Veículos:LCAM3
+LOJAS AMERICANAS:Varejo:LAME4
+LOJAS RENNER:Varejo:LREN3
+MAGAZINE LUIZA:Varejo:MGLU3
+MARFRIG:Alimentos:MRFG3
+MINERVA:Alimento:BEEF3
+MRV:Construção civil:MRVE3
+MULTIPLAN:Shopping Centers:MULT3
+PÃO DE AÇÚCAR - CBD:Varejo:PCAR3
+PETROBRAS:Petróleo e Gás:PETR3
+PETROBRAS:Petróleo e Gás:PETR4
+PETROBRAS BR:Petróleo e Gás:BRDT3
+PETRORIO:Petróleo e Gás:PRIO3
+QUALICORP:Saúde:QUAL3
+RAIADROGASIL:Saúde:RADL3
+RUMO S/A:Bens industriais:RAIL3
+SABESP:Saneamento:SBSP3
+SANTANDER BR:Financeiro:SANB11
+SID NACIONAL:Siderurgia e Metalurgia:CSNA3
+SUL AMERICA:Seguros:SULA11
+SUZANO S/A:Madeira e papel:SUZB5
+TAESA:Energia elétrica:TAEE11
+TELEF BRASIL:Telecomunicações:VIVT4
+TIM :Telecomunicações:TIMP3
+TOTVS:Tecnologia:TOTS3
+ULTRAPAR:Petróleo e Gás:UGPA3
+USIMINAS:Siderurgia e Metalurgia:USIM5
+VALE:Mineração:VALE3
+VIA VAREJO:Comérci:VVAR3
+WEG:Bens Industriais:WEGE3
+YDUQS PART:Educação:YDUQ3

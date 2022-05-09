@@ -6,9 +6,11 @@
 #include "../global/validation/Validation.h"
 #include "Menu.h"
 
-OfferInput insertDataOffer(){
+OfferInput insertDataOffer(Shares* s){
 
   OfferInput data;
+  Shares* dataSharesSearch = listCreateShares();
+
   int verification, verificationSignature = 0;
 
   do{
@@ -17,13 +19,13 @@ OfferInput insertDataOffer(){
       printf("Informe ação deseja: ");
       fgets(data.signature, MAX_SIG, stdin);
       removeBreakLine(data.signature);
-
-      verification = validateSignature(data.signature);
-
-    if(!verification)
+     
+      dataSharesSearch = listSearchShares(s, data.signature);
+  
+    if(dataSharesSearch == NULL)
       printf("\nInforme codigo da ação válido!\n");
 
-    }while(!verification);
+    }while(dataSharesSearch == NULL);
 
     verificationSignature = isExistingSignature(data.signature);
 
@@ -83,10 +85,14 @@ void mainOffer(){
   setlocale(LC_ALL, "Portuguese");
 
   Offer* offers = listCreateOffer();
+  Shares* shares = listCreateShares();
+
+  dataFileOffer(&offers);
+  dataFileShares(&shares);
 
   do{
     header();
-    dataFileOffer(offers);
+    
     printf("1. Inserir oferta;\n"); 
     printf("2. Listar oferta especifica;\n"); 
     printf("3. Listar todas as ofertas;\n"); 
@@ -97,7 +103,7 @@ void mainOffer(){
     scanf("%d", &option);
     getchar();
     switch(option){
-      case 1:  insertOffer(&offers); break;
+      case 1:  insertOffer(&offers, &shares); break;
       case 2:  retrieveOffer(&offers);break;
       case 3:  break;
       case 4:  break;

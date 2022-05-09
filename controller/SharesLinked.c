@@ -1,4 +1,4 @@
-#include "../utility/utility.h"
+#include "../utility/Utility.h"
 #include "../model/Shares.h"
 #include "../model/Buy.h"
 #include "../model/Sell.h"
@@ -44,7 +44,7 @@ int listEmptyShares(Shares* l){ return (l == NULL); }
 Shares* listSearchShares(Shares* l, char *sg){
     Shares* p;
     for(p = l; p != NULL; p = p->next){
-        if(strcmp(p->signature, sg)) return p;
+        if(strcmp(p->signature, sg) == 0) return p;
     }
     return NULL;
 }

@@ -2,6 +2,7 @@
     "files.associations": {
         "offer.h": "c",
         "shares.h": "c",
-        "offerinput.h": "c"
+        "offerinput.h": "c",
+        "utility.h": "c"
     }
 }

@@ -1,4 +1,4 @@
-#include "../utility/utility.h"
+#include "../utility/Utility.h"
 #include "../model/Offer.h"
 
 Offer* listCreateOffer(void){ return NULL; }

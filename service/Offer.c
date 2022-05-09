@@ -1,13 +1,15 @@
 #include "../utility/Utility.h"
+#include "../global/function/Function.h"
 #include "../model/Offer.h"
+#include "../model/Shares.h"
 #include "../model/input/OfferInput.h"
 #include "../view/Menu.h"
 
-void insertOffer(Offer** l){
+void insertOffer(Offer** l, Shares** s){
 
     header();
 
-    OfferInput offerInput = insertDataOffer();
+    OfferInput offerInput = insertDataOffer(*s);
 
     *l = listInsertOffer(*l, offerInput);
 
@@ -29,7 +31,7 @@ void clearVectorOffer(char *str, int count){
     }
 }
 
-void dataFileOffer(Offer* s){
+void dataFileOffer(Offer** s){
 
     char fileInit[512];
 
@@ -45,6 +47,7 @@ void dataFileOffer(Offer* s){
     }else{
 
         while(fgets(fileInit, 512, file) != NULL){
+            
             counter = 0;
             clearVectorOffer(offerInput.signature, 10);
             offerInput.type = Null_;
@@ -52,7 +55,7 @@ void dataFileOffer(Offer* s){
             offerInput.value = 0;
 
             for(int i = 0, j = 0; i < strlen(fileInit); i++){
-                if(fileInit[i] != ':'){
+                if(fileInit[i] != ':'){  
                     offerInput.signature[j] = fileInit[i];
                     j++;
                     counter++;
@@ -61,7 +64,7 @@ void dataFileOffer(Offer* s){
                 }
             }
 
-            for(int i = counter+1; i < strlen(fileInit); i++){ // 6
+            for(int i = counter+1; i < strlen(fileInit); i++){ 
                 if(fileInit[i] != ':'){
                     counter++;
                     offerInput.type = pow(fileInit[i] - '0', 1);
@@ -70,7 +73,7 @@ void dataFileOffer(Offer* s){
                 }
             }
 
-            for(int i = counter+2, n = 0, w = counter+2; i < strlen(fileInit); i++){ //8
+            for(int i = counter+2, n = 0, w = counter+2; i < strlen(fileInit); i++){ 
                 if(fileInit[i] != ':'){
                     counter++;
                     n++;
@@ -84,7 +87,7 @@ void dataFileOffer(Offer* s){
                     break;
                 }
             }
-            
+
             int n = 0, w = counter+3;
 
             for(int i = counter+3; i < strlen(fileInit)-1; i++){
@@ -102,14 +105,13 @@ void dataFileOffer(Offer* s){
                     w++;
                 }
             }
-            //printf("%s:%d:%d:%.2f\n", offerInput.signature, offerInput.type, offerInput.quantity, offerInput.value);
-  
-            s = listInsertOffer(s, offerInput);
+
+            removeSpace(offerInput.signature);
+
+            *s = listInsertOffer(*s, offerInput);
         }
 
-        listRetrieveOffer(s);
     }
-
 
     fclose(file);
 }

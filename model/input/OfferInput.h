@@ -3,6 +3,7 @@
     #define OFFERINPUT_H
 
     #include "../../utility/Utility.h"
+    #include "../Shares.h"
 
     typedef struct detailsOfferInput {
 
@@ -13,6 +14,6 @@
 
     } OfferInput;
 
-    OfferInput insertDataOffer();
+    OfferInput insertDataOffer(Shares* s);
  
 #endif

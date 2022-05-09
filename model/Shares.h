@@ -31,7 +31,7 @@
     void listReleaseShares(Shares *l);
 
     /* Service */
-    void dataFileShares(Shares* l);
+    void dataFileShares(Shares** l);
  
 #endif
 

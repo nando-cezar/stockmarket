@@ -1,4 +1,5 @@
 #include "../utility/Utility.h"
+#include "../global/function/Function.h"
 #include "../model/Shares.h"
 #include "../model/input/SharesInput.h"
 #include "../view/Menu.h"
@@ -9,7 +10,7 @@ void clearVectorShares(char *str, int count){
     }
 }
 
-void dataFileShares(Shares* s){
+void dataFileShares(Shares** s){
 
     char fileInit[512];
 
@@ -52,10 +53,12 @@ void dataFileShares(Shares* s){
             for(int i = counter+2, j = 0; i < strlen(fileInit); i++, j++){
                 sharesInput.signature[j] = fileInit[i];
             }
-            s = listInsertShares(s, sharesInput);
+
+            removeSpace(sharesInput.signature);
+
+            *s = listInsertShares(*s, sharesInput);
         }
 
-        listRetrieveShares(s);
     }
 
 

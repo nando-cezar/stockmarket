@@ -29,8 +29,9 @@
     Offer* listInsertSortedOffer(Offer* l, int v);
 
     /* Service */
-    void insertOffer(Offer** l);
+    void insertOffer(Offer** l, Shares** s);
     void retrieveOffer(Offer** l);
-    void dataFileOffer(Offer* l);
+    
+    void dataFileOffer(Offer** l);
  
 #endif

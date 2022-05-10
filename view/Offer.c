@@ -11,69 +11,45 @@ OfferInput insertDataOffer(Shares* s){
   OfferInput data;
   Shares* dataSharesSearch = listCreateShares();
 
-  int verification, verificationSignature = 0;
+  int verification;
 
   do{
+    
+    printf("Informe ação que deseja: ");
+    fgets(data.signature, MAX_SIG, stdin);
+    removeBreakLine(data.signature);
+    
+    textToUpper(data.signature);
 
-    do{
-      printf("Informe ação deseja: ");
-      fgets(data.signature, MAX_SIG, stdin);
-      removeBreakLine(data.signature);
-     
-      dataSharesSearch = listSearchShares(s, data.signature);
-  
-    if(dataSharesSearch == NULL)
-      printf("\nInforme codigo da ação válido!\n");
-
-    }while(dataSharesSearch == NULL);
-
-    verificationSignature = isExistingSignature(data.signature);
-
-    if(!verificationSignature){  /* Logic implement */ }
-    else{ textToUpper(data.signature); }
-      
-  }while (!verificationSignature);
-      
+    dataSharesSearch = listSearchShares(s, data.signature);
+    
+    if(dataSharesSearch == NULL) printf("Informe codigo da ação válido!\n");
+    else printf("O papel %s, foi selecionado com sucesso!\n", dataSharesSearch->name);
+ 
+  }while(dataSharesSearch == NULL);      
 
   do{
-    printf("Informe tipo de operação: ");
+    printf("Informe tipo de operação (C. compra | V. venda): ");
     scanf(" %c", &data.type);
     getchar();
     
     verification = validateOperation(data.type);
 
-    if(!verification)
-      printf("\nInforme tipo de operação válida!\n");
-    else
-      data.type = toupper(data.type);
+    if(!verification) printf("\nInforme tipo de operação válida!\n");
+    else data.type = toupper(data.type);
 
+    if(data.type == 'C') data.type = Buy_;
+    else data.type = Sell_;
+    
   }while(!verification);
 
-  do{
-    
-    printf("Informe quantidade: ");
-    scanf("%d", &data.quantity);
-    getchar();
-    
-    verification = validateNumber(data.quantity);
+  printf("Informe quantidade (#..): ");
+  data.quantity = validateInteger();
+  getchar();
 
-    if(!verification)
-      printf("\nInforme tipo de operação válida!\n");
-
-  }while(!verification);
-
-  do{
-    
-    printf("Informe valor: ");
-    scanf("%f", &data.value);
-    getchar();
-    
-    verification = validateNumber(data.value);
-
-    if(!verification)
-      printf("\nInforme tipo de operação válida!\n");
-
-  }while(!verification);
+  printf("Informe valor (##..,##): ");
+  data.value = validateFloat();
+  getchar();
 
   return data;
 }

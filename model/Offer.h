@@ -32,6 +32,6 @@
     void insertOffer(Offer** l, Shares** s);
     void retrieveOffer(Offer** l);
     
-    void dataFileOffer(Offer** l);
+    void dataFileOffer(Offer** l, Shares** s);
  
 #endif

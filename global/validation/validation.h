@@ -3,7 +3,7 @@
     #define VALIDATION_H
 
     int validateOperation(char operation);
-    int validateInteger();
-    float validateFloat();
+    int validateInteger(char *str);
+    float validateFloat(char *str);
 
 #endif

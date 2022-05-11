@@ -1,6 +1,8 @@
 #include "../utility/Utility.h"
 #include "../global/function/Function.h"
 #include "../model/Shares.h"
+#include "../model/Buy.h"
+#include "../model/Sell.h"
 #include "../model/input/SharesInput.h"
 #include "../view/Menu.h"
 

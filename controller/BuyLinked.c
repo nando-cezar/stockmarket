@@ -26,7 +26,7 @@ void listRetrieveBuy(Buy* l){
 
     Buy* p;
 
-    for(p = l; p != NULL; p = p->next) printf("info = %d : %d\n", p->value, p->quantity);
+    for(p = l; p != NULL; p = p->next) printf("info = %.2f : %d\n", p->value, p->quantity);
 
 }
 

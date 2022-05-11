@@ -24,7 +24,7 @@ OfferInput insertDataOffer(Shares* s){
     dataSharesSearch = listSearchShares(s, data.signature);
     
     if(dataSharesSearch == NULL) printf("Informe codigo da ação válido!\n");
-    else printf("O papel %s, foi selecionado com sucesso!\n", dataSharesSearch->name);
+    else printf("\nO papel %s, foi selecionado com sucesso!\n\n", dataSharesSearch->name);
  
   }while(dataSharesSearch == NULL);      
 
@@ -42,13 +42,13 @@ OfferInput insertDataOffer(Shares* s){
     else data.type = Sell_;
     
   }while(!verification);
-
+  
   printf("Informe quantidade (#..): ");
-  data.quantity = validateInteger();
+  data.quantity = validateInteger("Informe uma quantidade válida!\nInforme quantidade: ");
   getchar();
 
   printf("Informe valor (##..,##): ");
-  data.value = validateFloat();
+  data.value = validateFloat("Informe um valor válido!\nInforme valor: ");
   getchar();
 
   return data;
@@ -60,13 +60,14 @@ void mainOffer(){
 
   setlocale(LC_ALL, "Portuguese");
 
-  Offer* offers = listCreateOffer();
   Shares* shares = listCreateShares();
+  Offer* offers = listCreateOffer();
 
-  dataFileOffer(&offers);
   dataFileShares(&shares);
+  dataFileOffer(&offers, &shares);
+  
 
-  do{
+  /*do{
     header();
     
     printf("1. Inserir oferta;\n"); 
@@ -90,6 +91,6 @@ void mainOffer(){
         getchar();
         break;
     }
-  }while(option != 6);
+  }while(option != 6);*/
 
 }

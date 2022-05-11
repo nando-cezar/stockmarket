@@ -31,7 +31,7 @@ void clearVectorOffer(char *str, int count){
     }
 }
 
-void dataFileOffer(Offer** s){
+void dataFileOffer(Offer** l, Shares** s){
 
     char fileInit[512];
 
@@ -108,7 +108,21 @@ void dataFileOffer(Offer** s){
 
             removeSpace(offerInput.signature);
 
-            *s = listInsertOffer(*s, offerInput);
+            *l = listInsertOffer(*l, offerInput);
+
+            if(offerInput.type == Buy_){
+                listSearchShares(*s, offerInput.signature)->buy = listInsertBuy((*s)->buy, offerInput.quantity, offerInput.value);
+                printf("--> TESTE BUY\n");
+                listRetrieveBuy(listSearchShares(*s, offerInput.signature)->buy);
+            }else{
+                listSearchShares(*s, offerInput.signature)->sell = listInsertSell((*s)->sell, offerInput.quantity, offerInput.value);
+                printf("--> TESTE SELL\n");
+                listRetrieveSell(listSearchShares(*s, offerInput.signature)->sell);
+            }
+            
+            getchar();
+            getchar();
+            
         }
 
     }

@@ -15,24 +15,24 @@ int validateOperation(char operation){
     return 0;
 }
 
-int validateInteger(){
+int validateInteger(char *str){
 
     int value;
     while (scanf("%d", &value) != 1){
         static char temp[256];
         fgets(temp, sizeof(temp), stdin);
-        printf("Informe uma quantidade válida!\nInforme quantidade: ");
+        printf(str);
     }
     return value;
 }
 
-float validateFloat(){
+float validateFloat(char *str){
 
     float value;
     while (scanf("%f", &value) != 1){
         static char temp[256];
         fgets(temp, sizeof(temp), stdin);
-        printf("Informe um valor válido!\nInforme valor: ");
+        printf(str);
     }
     return value;
 }

@@ -3,6 +3,7 @@
         "offer.h": "c",
         "shares.h": "c",
         "offerinput.h": "c",
-        "utility.h": "c"
+        "utility.h": "c",
+        "function.h": "c"
     }
 }

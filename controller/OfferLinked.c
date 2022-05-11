@@ -30,7 +30,18 @@ void listRetrieveOffer(Offer* l){
 
     Offer* p;
 
-    for(p = l; p != NULL; p = p->next) printf("%s = %d, %d, %.2f\n", p->signature, p->type, p->quantity, p->value);
+    char tab[6] = {'\t','\t','\t','\t','\t','\t'};
+    printf("\n\nTABELA COMPRA %s TABELA VENDA\n\n", tab);
+
+    for(p = l; p != NULL; p = p->next)
+        if(p->type == Buy_){
+            printf("| %s | %d | %d | %.2f |\n", p->signature, p->type, p->quantity, p->value);
+        }
+
+    for(p = l; p != NULL; p = p->next)
+        if(p->type == Sell_){
+            printf("| %s | %d | %d | %.2f |\n", p->signature, p->type, p->quantity, p->value);
+        } 
 
 }
 

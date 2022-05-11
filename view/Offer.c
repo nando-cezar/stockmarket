@@ -67,7 +67,7 @@ void mainOffer(){
   dataFileOffer(&offers, &shares);
   
 
-  /*do{
+  do{
     header();
     
     printf("1. Inserir oferta;\n"); 
@@ -81,8 +81,8 @@ void mainOffer(){
     getchar();
     switch(option){
       case 1:  insertOffer(&offers, &shares); break;
-      case 2:  retrieveOffer(&offers);break;
-      case 3:  break;
+      case 2:  break;
+      case 3:  retrieveOffer(&offers);break;
       case 4:  break;
       case 5:  break;
       case 6:  break;
@@ -91,6 +91,6 @@ void mainOffer(){
         getchar();
         break;
     }
-  }while(option != 6);*/
+  }while(option != 6);
 
 }

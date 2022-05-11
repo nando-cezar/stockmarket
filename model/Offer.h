@@ -5,6 +5,7 @@
     #include "../utility/Utility.h"
     
     #include "input/OfferInput.h"
+    #include "Clock.h"
 
     typedef struct detailsOffer {
 
@@ -13,6 +14,7 @@
         int quantity;
         float value;
         char signature[10];
+        struct detailsClock *clock;
         struct detailsOffer *next;
 
     } Offer;

@@ -5,23 +5,35 @@ Offer* listCreateOffer(void){ return NULL; }
 
 Offer* listInsertOffer(Offer* l, OfferInput offerInput){ 
 
+    time_t seconds;
+    struct tm *p;
     Offer* new = (Offer*) malloc(sizeof(Offer));
+
     new->flag = Active_;
     new->type = offerInput.type;
     strcpy(new->signature, offerInput.signature);
     new->quantity = offerInput.quantity;
     new->value = offerInput.value;
+    time(&seconds);
+    p = localtime(&seconds);
+    /* Colocar relogio pra funcionar */
+    new->clock = p;
     new->next = l;
+
     return new;
 }
 
 void listUpdateOffer(Offer** l,  OfferInput offerInput){ 
 
+    //time_t seconds;
     Offer* new = (Offer*) malloc(sizeof(Offer));
+
     new->type = offerInput.type;
     strcpy(new->signature, offerInput.signature);
     new->quantity = offerInput.quantity;
     new->value = offerInput.value;
+    //time(&seconds);
+    //new->time = localtime(&seconds);
     new->next = *l;
     *l = new;
 }
@@ -30,17 +42,31 @@ void listRetrieveOffer(Offer* l){
 
     Offer* p;
 
-    char tab[6] = {'\t','\t','\t','\t','\t','\t'};
-    printf("\n\nTABELA COMPRA %s TABELA VENDA\n\n", tab);
-
+    printf("\n\tHISTORICO DE COMPRA\n\n");
     for(p = l; p != NULL; p = p->next)
         if(p->type == Buy_){
-            printf("| %s | %d | %d | %.2f |\n", p->signature, p->type, p->quantity, p->value);
+            printf(
+                "| %s | %d | %d | %.2f |\n", 
+                p->signature, 
+                p->type, 
+                p->quantity, 
+                p->value
+            );
         }
 
+    printf("\n\tHISTORICO DE VENDA\n\n");
     for(p = l; p != NULL; p = p->next)
         if(p->type == Sell_){
-            printf("| %s | %d | %d | %.2f |\n", p->signature, p->type, p->quantity, p->value);
+            printf(
+                "| %s | %d | %d | %.2f | %d:%d:%d\n", 
+                p->signature, 
+                p->type, 
+                p->quantity, 
+                p->value, 
+                p->clock->tm_hour,
+                p->clock->tm_min, 
+                p->clock->tm_sec
+            );
         } 
 
 }

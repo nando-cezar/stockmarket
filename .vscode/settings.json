@@ -4,6 +4,7 @@
         "shares.h": "c",
         "offerinput.h": "c",
         "utility.h": "c",
-        "function.h": "c"
+        "function.h": "c",
+        "time.h": "c"
     }
 }

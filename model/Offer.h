@@ -14,7 +14,7 @@
         int quantity;
         float value;
         char signature[10];
-        struct detailsClock *clock;
+        struct detailsClock clock;
         struct detailsOffer *next;
 
     } Offer;

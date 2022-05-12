@@ -1,6 +1,6 @@
-#include "../../utility/utility.h"
-#include "../function/function.h"
-#include "validation.h"
+#include "../../utility/Utility.h"
+#include "../function/Function.h"
+#include "Validation.h"
 
 int validateOperation(char operation){
 

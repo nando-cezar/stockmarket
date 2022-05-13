@@ -5,7 +5,7 @@
     #include "../utility/Utility.h"
     
     typedef struct detailsBuy {
-
+ 
         typeStatus flag;
         int quantity;
         float value;

@@ -10,7 +10,7 @@ OfferInput insertDataOffer(Shares* s){
 
   OfferInput data;
   Shares* dataSharesSearch = listCreateShares();
-
+  char op;
   int verification;
 
   do{
@@ -32,13 +32,13 @@ OfferInput insertDataOffer(Shares* s){
   do{
 
     printf("Informe tipo de operação (C. compra | V. venda): ");
-    scanf(" %c", &data.type);
+    scanf(" %c", &op);
     getchar();
     
-    verification = validateOperation(data.type);
+    verification = validateOperation(op);
 
     if(!verification) printf("\nInforme tipo de operação válida!\n");
-    else data.type = toupper(data.type);
+    else data.type = toupper(op);
 
     if(data.type == 'C') data.type = Buy_;
     else data.type = Sell_;
@@ -54,10 +54,32 @@ OfferInput insertDataOffer(Shares* s){
   getchar();
 
   if(data.type == Buy_){
-    s->buy = listInsertSortedBuy(s->buy, data.quantity, data.value);
+    printf("listSearchSell\n");
+    if(listSearchSell(s->sell, data.value) != NULL){
+      if(s->sell->quantity == data.quantity){
+        printf("listDeleteSell\n");
+        s->sell = listDeleteSell(s->sell, data.value); 
+      }else if(s->sell->quantity >= data.quantity){
+        s->sell->quantity -= data.quantity;
+      }
+    }else{
+      printf("listInsertSortedBuy\n");
+      s->buy = listInsertSortedBuy(s->buy, data.quantity, data.value);
+    }
   }else{
-    s->sell = listInsertSortedSell(s->sell, data.quantity, data.value);
-  }
+    printf("listSearchBuy\n");
+    if(listSearchBuy(s->buy, data.value) != NULL){
+      if(s->buy->quantity == data.quantity){
+        printf("listDeleteBuy\n");
+        s->buy = listDeleteBuy(s->buy, data.value); 
+      }else if(s->buy->quantity >= data.quantity){
+        s->buy->quantity -= data.quantity;
+      }
+    }else{
+      printf("listInsertSortedSell\n");
+      s->sell = listInsertSortedSell(s->sell, data.quantity, data.value);
+    } 
+  } 
 
   return data;
 }
@@ -66,10 +88,6 @@ void mainOffer(){
 
   int option;
 
-  /* As ofertas referentes a ação HGTX3 não estão sendo totalmente carregadas. */
-  /* Implementar lógica para a partir da inserção de uma oferta, inserir na lista de compra ou venda na ação - OK. */
-  /* Implementar lógica para a partir da inserção de uma oferta, inserir na lista ordenando. - OK */
-  /* Referenciar compra e venda. */
   setlocale(LC_ALL, "Portuguese");
 
   Shares* shares = listCreateShares();
@@ -87,8 +105,8 @@ void mainOffer(){
     printf("1. Inserir oferta;\n"); 
     printf("2. Listar oferta especifica;\n"); 
     printf("3. Listar todas as ofertas;\n"); 
-    //printf("4. Listar operações concluídas;\n"); 
-    //printf("5. ;\n"); 
+    printf("4. Efetuar operação;\n"); 
+    //printf("5. Listar operações concluídas;\n"); 
     printf("6. Sair;\n");
     printf("\nEscolha uma opção: ");
     scanf("%d", &option);

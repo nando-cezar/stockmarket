@@ -48,7 +48,7 @@ void listRetrieveOffer(Offer* l){
     for(p = l; p != NULL; p = p->next)
         if(p->type == Buy_)
             printf(
-                "| %s | %d | %d | %.2f | %d/%d/%d - %d:%d:%d\n", 
+                "| %s | %d | %03d | %.2f | %02d/%02d/%d - %d:%d:%d\n", 
                 p->signature, 
                 p->type, 
                 p->quantity, 
@@ -65,7 +65,7 @@ void listRetrieveOffer(Offer* l){
     for(p = l; p != NULL; p = p->next)
         if(p->type == Sell_)
             printf(
-                "| %s | %d | %d | %.2f | %d/%d/%d - %d:%d:%d\n", 
+                "| %s | %d | %03d | %.2f | %02d/%02d/%d - %d:%d:%d\n", 
                 p->signature, 
                 p->type, 
                 p->quantity, 

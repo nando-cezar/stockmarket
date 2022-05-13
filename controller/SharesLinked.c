@@ -56,6 +56,8 @@ void listRetrieveShares(Shares* l){
         getchar();
     } 
 
+    free(b);
+    free(s);
 }
 
 int listEmptyShares(Shares* l){ return (l == NULL); }

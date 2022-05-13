@@ -129,4 +129,3 @@ void dataFileOffer(Offer** l, Shares** s){
 
     fclose(file);
 }
-

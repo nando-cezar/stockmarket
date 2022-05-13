@@ -13,6 +13,7 @@
 
     } Sell;
 
+    /* Controller */
     Sell* listCreateSell(void);
     Sell* listInsertSell(Sell* l, int q, float v);
     void listUpdateSell(Sell** l, int q, float v);

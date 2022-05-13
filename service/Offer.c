@@ -113,41 +113,16 @@ void dataFileOffer(Offer** l, Shares** s){
 
             if(offerInput.type == Buy_){
                 sh = listSearchShares(*s, offerInput.signature);
-                if(sh != NULL){
-                    //printf("Buy ---> %s = %d | %d : %.2f\n", sh->signature, sh->flag,  offerInput.quantity, offerInput.value);
-                    sh->buy = listInsertSortedBuy(sh->buy, offerInput.quantity, offerInput.value);
-                    //printf("-- %d | %.2f\n", sh->buy->quantity, sh->buy->value);
-                    /*printf("--> TESTE BUY\n");
-                    listRetrieveBuy(listSearchShares(*s, offerInput.signature)->buy);*/
-                }
+                if(sh != NULL) sh->buy = listInsertSortedBuy(sh->buy, offerInput.quantity, offerInput.value);
                 
             }else{
                 sh = listSearchShares(*s, offerInput.signature);
-                if(sh != NULL){ 
-                    //printf("Sell ---> %s\n", sh->signature);
-                    //printf("Sell ---> %s = %d | %d : %.2f\n", sh->signature, sh->flag,  offerInput.quantity, offerInput.value);
-                    sh->sell = listInsertSortedSell(sh->sell, offerInput.quantity, offerInput.value);
-                    /*printf("--> TESTE SELL\n");
-                    listRetrieveSell(listSearchShares(*s, offerInput.signature)->sell);*/
-                }
-                
-            }
-            
-            /*getchar();
-            getchar();*/
-            
+                if(sh != NULL) sh->sell = listInsertSortedSell(sh->sell, offerInput.quantity, offerInput.value);
+            }            
         }
         
-        /*(*s)->buy = sh->buy;
-        (*s)->sell = sh->sell;*/
         sh->buy->next = NULL;
         sh->sell->next = NULL;
-        /*printf("--> TESTE BUY\n");
-        listRetrieveBuy(sh->buy);
-        printf("--> TESTE SELL\n");
-        listRetrieveSell(sh->sell);
-        getchar();
-        getchar();*/
         free(sh);
 
     }

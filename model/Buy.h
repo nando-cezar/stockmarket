@@ -13,6 +13,7 @@
 
     } Buy;
 
+    /* Controller */
     Buy* listCreateBuy(void);
     Buy* listInsertBuy(Buy* l, int q, float v);
     void listUpdateBuy(Buy** l, int q, float v);

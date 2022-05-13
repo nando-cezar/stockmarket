@@ -26,7 +26,7 @@ void retrieveOffer(Offer** l){
 }
 
 void clearVectorOffer(char *str, int count){ 
-    for(int i=0; i < count; i++){
+    for(int i = 0; i < count; i++){
         str[i] = '\0';
     }
 }
@@ -36,7 +36,7 @@ void dataFileOffer(Offer** l, Shares** s){
     char fileInit[512];
 
     OfferInput offerInput;
-
+    Shares *sh;
     int counter;
 
     FILE *file = fopen("db/offer.txt", "r");
@@ -109,21 +109,46 @@ void dataFileOffer(Offer** l, Shares** s){
             removeSpace(offerInput.signature);
 
             *l = listInsertOffer(*l, offerInput);
+            sh = NULL;
 
             if(offerInput.type == Buy_){
-                listSearchShares(*s, offerInput.signature)->buy = listInsertBuy((*s)->buy, offerInput.quantity, offerInput.value);
-                /*printf("--> TESTE BUY\n");
-                listRetrieveBuy(listSearchShares(*s, offerInput.signature)->buy);*/
+                sh = listSearchShares(*s, offerInput.signature);
+                if(sh != NULL){
+                    //printf("Buy ---> %s = %d | %d : %.2f\n", sh->signature, sh->flag,  offerInput.quantity, offerInput.value);
+                    sh->buy = listInsertBuy(sh->buy, offerInput.quantity, offerInput.value);
+                    //printf("-- %d | %.2f\n", sh->buy->quantity, sh->buy->value);
+                    /*printf("--> TESTE BUY\n");
+                    listRetrieveBuy(listSearchShares(*s, offerInput.signature)->buy);*/
+                }
+                
             }else{
-                listSearchShares(*s, offerInput.signature)->sell = listInsertSell((*s)->sell, offerInput.quantity, offerInput.value);
-                /*printf("--> TESTE SELL\n");
-                listRetrieveSell(listSearchShares(*s, offerInput.signature)->sell);*/
+                sh = listSearchShares(*s, offerInput.signature);
+                if(sh != NULL){ 
+                    //printf("Sell ---> %s\n", sh->signature);
+                    //printf("Sell ---> %s = %d | %d : %.2f\n", sh->signature, sh->flag,  offerInput.quantity, offerInput.value);
+                    sh->sell = listInsertSell(sh->sell, offerInput.quantity, offerInput.value);
+                    /*printf("--> TESTE SELL\n");
+                    listRetrieveSell(listSearchShares(*s, offerInput.signature)->sell);*/
+                }
+                
             }
             
             /*getchar();
             getchar();*/
             
         }
+        
+        /*(*s)->buy = sh->buy;
+        (*s)->sell = sh->sell;*/
+        sh->buy->next = NULL;
+        sh->sell->next = NULL;
+        /*printf("--> TESTE BUY\n");
+        listRetrieveBuy(sh->buy);
+        printf("--> TESTE SELL\n");
+        listRetrieveSell(sh->sell);
+        getchar();
+        getchar();*/
+        free(sh);
 
     }
 

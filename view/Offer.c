@@ -21,8 +21,9 @@ OfferInput insertDataOffer(Shares* s){
     
     textToUpper(data.signature);
 
-    dataSharesSearch = listSearchShares(s, data.signature);
-    
+    s = listSearchShares(s, data.signature);
+    dataSharesSearch = s;
+
     if(dataSharesSearch == NULL) printf("Informe codigo da ação válido!\n");
     else printf("\nO papel %s, foi selecionado com sucesso!\n\n", dataSharesSearch->name);
  
@@ -51,6 +52,14 @@ OfferInput insertDataOffer(Shares* s){
   data.value = validateFloat("Informe um valor válido!\nInforme valor: ");
   getchar();
 
+  if(data.type == Buy_){
+    s->buy = listInsertBuy(s->buy, data.quantity, data.value);
+    s->buy->next = NULL;
+  }else{
+    s->sell = listInsertSell(s->sell, data.quantity, data.value);
+    s->sell->next = NULL;
+  }
+
   return data;
 }
 
@@ -58,6 +67,9 @@ void mainOffer(){
 
   int option;
 
+  /* As ofertas referentes a ação HGTX3 não estão sendo totalmente carregadas*/
+  /* Implementar lógica para a partir da inserção de uma oferta, inserir na lista de compra ou venda na ação - OK*/
+  /* Implementar lógica para a partir da inserção de uma oferta, inserir na lista ordenando*/
   setlocale(LC_ALL, "Portuguese");
 
   Shares* shares = listCreateShares();
@@ -66,7 +78,8 @@ void mainOffer(){
   dataFileShares(&shares);
   dataFileOffer(&offers, &shares);
   
-
+  listRetrieveShares(shares);
+  
   do{
     header();
     
@@ -81,7 +94,7 @@ void mainOffer(){
     getchar();
     switch(option){
       case 1:  insertOffer(&offers, &shares); break;
-      case 2:  break;
+      case 2:  listRetrieveShares(shares);break;
       case 3:  retrieveOffer(&offers);break;
       case 4:  break;
       case 5:  break;

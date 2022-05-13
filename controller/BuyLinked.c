@@ -3,7 +3,7 @@
 
 Buy* listCreateBuy(void){ return NULL; }
 
-Buy* listInsertBuy(Buy* l, int q, int v){ 
+Buy* listInsertBuy(Buy* l, int q, float v){ 
 
     Buy* new = (Buy*) malloc(sizeof(Buy));
     new->flag = Active_;
@@ -13,7 +13,7 @@ Buy* listInsertBuy(Buy* l, int q, int v){
     return new;
 }
 
-void listUpdateBuy(Buy** l,  int q, int v){ 
+void listUpdateBuy(Buy** l,  int q, float v){ 
 
     Buy* new = (Buy*) malloc(sizeof(Buy));
     new->quantity = q;
@@ -70,7 +70,7 @@ void listReleaseBuy(Buy *l){
     }
 }
 
-Buy* listInsertSortedBuy(Buy* l, int v){
+Buy* listInsertSortedBuy(Buy* l, int q, float v){
 
     Buy* new;
     Buy* ant = NULL;
@@ -84,6 +84,7 @@ Buy* listInsertSortedBuy(Buy* l, int v){
 
     new = (Buy*) malloc(sizeof(Buy));
     new->value = v;
+    new->quantity = q;
 
     if(ant == NULL){
 

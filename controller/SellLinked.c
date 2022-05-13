@@ -3,7 +3,7 @@
 
 Sell* listCreateSell(void){ return NULL; }
 
-Sell* listInsertSell(Sell* l, int q, int v){ 
+Sell* listInsertSell(Sell* l, int q, float v){ 
 
     Sell* new = (Sell*) malloc(sizeof(Sell));
     new->flag = Active_;
@@ -13,7 +13,7 @@ Sell* listInsertSell(Sell* l, int q, int v){
     return new;
 }
 
-void listUpdateSell(Sell** l,  int q, int v){ 
+void listUpdateSell(Sell** l,  int q, float v){ 
 
     Sell* new = (Sell*) malloc(sizeof(Sell));
     new->quantity = q;
@@ -59,7 +59,7 @@ Sell* listDeleteSell(Sell* l, int v){
     return l;
 }
 
-void listRelease(Sell *l){
+void listReleaseSell(Sell *l){
 
     Sell* p = l;
 
@@ -70,7 +70,7 @@ void listRelease(Sell *l){
     }
 }
 
-Sell* listInsertSorted(Sell* l, int v){
+Sell* listInsertSortedSell(Sell* l, int q, float v){
 
     Sell* new;
     Sell* ant = NULL;
@@ -84,6 +84,7 @@ Sell* listInsertSorted(Sell* l, int v){
 
     new = (Sell*) malloc(sizeof(Sell));
     new->value = v;
+    new->quantity = q;
 
     if(ant == NULL){
 

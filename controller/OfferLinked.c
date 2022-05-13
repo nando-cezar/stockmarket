@@ -16,12 +16,7 @@ Offer* listInsertOffer(Offer* l, OfferInput offerInput){
     new->value = offerInput.value;
     time(&seconds);
     p = localtime(&seconds);
-    new->clock.tm_mday  = p->tm_mday;
-    new->clock.tm_mon   = p->tm_mon + 1;
-    new->clock.tm_year  = p->tm_year + 1900;
-    new->clock.tm_hour  = p->tm_hour;
-    new->clock.tm_min   = p->tm_min;
-    new->clock.tm_sec   = p->tm_sec;
+    new->clock = p;
     new->next = l;
 
     return new;
@@ -29,15 +24,18 @@ Offer* listInsertOffer(Offer* l, OfferInput offerInput){
 
 void listUpdateOffer(Offer** l,  OfferInput offerInput){ 
 
-    //time_t seconds;
+    time_t seconds;
+    struct tm *p;
     Offer* new = (Offer*) malloc(sizeof(Offer));
 
     new->type = offerInput.type;
     strcpy(new->signature, offerInput.signature);
     new->quantity = offerInput.quantity;
     new->value = offerInput.value;
-    //time(&seconds);
-    //new->time = localtime(&seconds);
+    time(&seconds);
+    p = localtime(&seconds);
+    new->clock = p;
+
     new->next = *l;
     *l = new;
 }
@@ -48,39 +46,37 @@ void listRetrieveOffer(Offer* l){
 
     printf("\n\tHISTORICO DE COMPRA\n\n");
     for(p = l; p != NULL; p = p->next)
-        if(p->type == Buy_){
+        if(p->type == Buy_)
             printf(
-                "| %s | %d | %d | %.2f | %d/%d/%d - %d:%d:%d\n", 
+                "| %s | %d | %d | %.2f | %d/%d/%d - %d:%d:%d : ", 
                 p->signature, 
                 p->type, 
                 p->quantity, 
                 p->value, 
-                p->clock.tm_mday,
-                p->clock.tm_mon,
-                p->clock.tm_year,
-                p->clock.tm_hour,
-                p->clock.tm_min,
-                p->clock.tm_sec
+                p->clock->tm_mday,
+                p->clock->tm_mon,
+                p->clock->tm_year,
+                p->clock->tm_hour,
+                p->clock->tm_min,
+                p->clock->tm_sec
             );
-        }
 
     printf("\n\tHISTORICO DE VENDA\n\n");
     for(p = l; p != NULL; p = p->next)
-        if(p->type == Sell_){
+        if(p->type == Sell_)
             printf(
                 "| %s | %d | %d | %.2f | %d/%d/%d - %d:%d:%d\n", 
                 p->signature, 
                 p->type, 
                 p->quantity, 
                 p->value, 
-                p->clock.tm_mday,
-                p->clock.tm_mon,
-                p->clock.tm_year,
-                p->clock.tm_hour,
-                p->clock.tm_min,
-                p->clock.tm_sec
+                p->clock->tm_mday,
+                p->clock->tm_mon,
+                p->clock->tm_year,
+                p->clock->tm_hour,
+                p->clock->tm_min,
+                p->clock->tm_sec
             );
-        } 
 
 }
 

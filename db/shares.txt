@@ -123,4 +123,4 @@ USIMINAS:Siderurgia e Metalurgia:USIM5
 VALE:Mineração:VALE3
 VIA VAREJO:Comérci:VVAR3
 WEG:Bens Industriais:WEGE3
-YDUQS PART:Educação:YDUQ3;
+YDUQS PART:Educação:YDUQ3

@@ -5,6 +5,7 @@
     #include "../utility/Utility.h"
     
     #include "input/OfferInput.h"
+    #include "Shares.h"
 
     typedef struct detailsOffer {
 
@@ -19,21 +20,20 @@
     } Offer;
 
     /* Controller */
-    Offer* listCreateOffer(void);
-    Offer* listInsertOffer(Offer* l, OfferInput offerInput);
-    void listUpdateOffer(Offer** l, OfferInput offerInput);
-    void listRetrieveOffer(Offer* l);
-    int listEmptyOffer(Offer* l);
-    Offer* listSearchOffer(Offer* l, int v);
-    Offer* listDeleteOffer(Offer* l, int v);
-    void listReleaseOffer(Offer *l);
-    Offer* listInsertSortedOffer(Offer* l, int v);
+    Offer*  listCreateOffer(void);
+    Offer*  listInsertOffer(Offer* l, OfferInput offerInput);
+    void    listUpdateOffer(Offer** l, OfferInput offerInput);
+    void    listRetrieveOffer(Offer* l);
+    int     listEmptyOffer(Offer* l);
+    Offer*  listSearchOffer(Offer* l, int v);
+    Offer*  listDeleteOffer(Offer* l, int v);
+    void    listReleaseOffer(Offer *l);
 
     /* Service */
-    void insertOffer(Offer** l, Shares** s);
-    void retrieveOffer(Offer** l);
+    void    insertOffer(Offer** l, Shares** s);
+    void    retrieveOffer(Offer** l);
     
     /* Data */
-    void dataFileOffer(Offer** l, Shares** s);
+    void    dataFileOffer(Offer** l, Shares** s);
  
 #endif

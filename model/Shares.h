@@ -23,15 +23,19 @@
     /* Controller */
     Shares* listCreateShares(void);
     Shares* listInsertShares(Shares* l, SharesInput sharesInput);
-    void listUpdateShares(Shares** l, SharesInput sharesInput);
-    void listRetrieveShares(Shares* l);
-    int listEmptyShares(Shares* l);
+    void    listUpdateShares(Shares** l, SharesInput sharesInput);
+    void    listRetrieveShares(Shares* l);
+    int     listEmptyShares(Shares* l);
     Shares* listSearchShares(Shares* l, char *sg);
     Shares* listDeleteShares(Shares* l, char *sg);
-    void listReleaseShares(Shares *l);
+    void    listReleaseShares(Shares *l);
 
     /* Service */
-    void dataFileShares(Shares** l);
+    void    retrieveShares(Shares** s);
+    void    retrieveSpecificShares(Shares** s); 
+    
+    /* Data */
+    void    dataFileShares(Shares** l);
  
 #endif
 

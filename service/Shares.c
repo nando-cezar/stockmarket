@@ -1,10 +1,32 @@
 #include "../utility/Utility.h"
 #include "../global/function/Function.h"
 #include "../model/Shares.h"
-#include "../model/Buy.h"
-#include "../model/Sell.h"
-#include "../model/input/SharesInput.h"
+#include "../model/output/SharesOutput.h"
 #include "../view/Menu.h"
+
+void retrieveShares(Shares** s){
+
+    header();
+
+    listRetrieveShares(*s);
+
+    getchar();
+}
+
+void retrieveSpecificShares(Shares** s){
+
+    header();
+
+    Shares *shares = NULL;
+    SharesOutput sharesOutput = searchDataShares(*s);
+    
+    shares = listSearchShares(*s, sharesOutput.signature);
+
+    listRetrieveBuy(shares->buy);
+    listRetrieveSell(shares->sell);
+
+    getchar();
+}
 
 void clearVectorShares(char *str, int count){ 
     for(int i=0; i < count; i++){

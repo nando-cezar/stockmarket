@@ -4,6 +4,7 @@
 #include "../model/input/OfferInput.h"
 #include "../global/function/Function.h"
 #include "../global/validation/Validation.h"
+#include "OfferView.h"
 #include "Menu.h"
 
 OfferInput insertDataOffer(Shares* s){
@@ -54,29 +55,24 @@ OfferInput insertDataOffer(Shares* s){
   getchar();
 
   if(data.type == Buy_){
-    printf("listSearchSell\n");
+
     if(listSearchSell(s->sell, data.value) != NULL){
       if(s->sell->quantity == data.quantity){
-        printf("listDeleteSell\n");
         s->sell = listDeleteSell(s->sell, data.value); 
       }else if(s->sell->quantity >= data.quantity){
         s->sell->quantity -= data.quantity;
       }
     }else{
-      printf("listInsertSortedBuy\n");
       s->buy = listInsertSortedBuy(s->buy, data.quantity, data.value);
     }
   }else{
-    printf("listSearchBuy\n");
     if(listSearchBuy(s->buy, data.value) != NULL){
       if(s->buy->quantity == data.quantity){
-        printf("listDeleteBuy\n");
         s->buy = listDeleteBuy(s->buy, data.value); 
       }else if(s->buy->quantity >= data.quantity){
         s->buy->quantity -= data.quantity;
       }
     }else{
-      printf("listInsertSortedSell\n");
       s->sell = listInsertSortedSell(s->sell, data.quantity, data.value);
     } 
   } 
@@ -84,45 +80,31 @@ OfferInput insertDataOffer(Shares* s){
   return data;
 }
 
-void mainOffer(){
+void mainOffer(Offer *offers, Shares *shares){
 
   int option;
 
   setlocale(LC_ALL, "Portuguese");
-
-  Shares* shares = listCreateShares();
-  Offer* offers = listCreateOffer();
-
-  dataFileShares(&shares);
-  dataFileOffer(&offers, &shares);
-  
-  listRetrieveShares(shares);
   
   do{
 
     header();
     
     printf("1. Inserir oferta;\n"); 
-    printf("2. Listar oferta especifica;\n"); 
-    printf("3. Listar todas as ofertas;\n"); 
-    printf("4. Efetuar operação;\n"); 
-    //printf("5. Listar operações concluídas;\n"); 
-    printf("6. Sair;\n");
+    printf("2. Listar histórico de ofertas;\n"); 
+    printf("3. Voltar ao menu principal;\n");
     printf("\nEscolha uma opção: ");
     scanf("%d", &option);
     getchar();
     switch(option){
-      case 1:  insertOffer(&offers, &shares); break;
-      case 2:  listRetrieveShares(shares);break;
-      case 3:  retrieveOffer(&offers);break;
-      case 4:  break;
-      case 5:  break;
-      case 6:  break;
+      case 1:  insertOffer(&offers, &shares);break;
+      case 2:  retrieveOffer(&offers);break;
+      case 3:  break;
       default: 
         printf("Opção inválida!\n"); 
         getchar();
         break;
     }
-  }while(option != 6);
+  }while(option != 3);
 
 }

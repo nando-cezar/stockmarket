@@ -14,6 +14,6 @@
 
     } OfferInput;
 
-    OfferInput insertDataOffer(Shares* s);
+    OfferInput insertDataOffer(Shares* s); /* Modificar para DTO */  
  
 #endif

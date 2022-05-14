@@ -1,4 +1,5 @@
 #include "../utility/Utility.h"
+#include "../model/input/OfferInput.h"
 #include "../model/Offer.h"
 
 Offer* listCreateOffer(void){ return NULL; }
@@ -48,7 +49,7 @@ void listRetrieveOffer(Offer* l){
     for(p = l; p != NULL; p = p->next)
         if(p->type == Buy_)
             printf(
-                "| %s | %d | %03d | %.2f | %02d/%02d/%d - %d:%d:%d\n", 
+                "| %s | %d | %03d | R$ %.2f | %02d/%02d/%d - %d:%d:%d\n", 
                 p->signature, 
                 p->type, 
                 p->quantity, 
@@ -118,31 +119,4 @@ void listReleaseOffer(Offer *l){
         free(p);
         p = t;
     }
-}
-
-Offer* listInsertSortedOffer(Offer* l, int v){
-
-    Offer* new;
-    Offer* ant = NULL;
-    Offer* p = l;
-
-
-    while(p != NULL && p->value < v){
-        ant = p;
-        p = p->next;
-    }
-
-    new = (Offer*) malloc(sizeof(Offer));
-    new->value = v;
-
-    if(ant == NULL){
-
-        new->next = l;
-        l = new;
-
-    }else{
-        new->next = ant->next;
-        ant->next = new;
-    }
-    return l;
 }

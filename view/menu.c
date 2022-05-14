@@ -1,5 +1,9 @@
 #include "../utility/Utility.h"
-#include "Offer.h"
+#include "../model/Offer.h"
+#include "../model/Shares.h"
+#include "OfferView.h"
+#include "SharesView.h"
+#include "Menu.h"
 
 void logo(){
 
@@ -29,21 +33,26 @@ void header(){
 void menu(){
 
     int option;
+    Shares* shares = listCreateShares();
+    Offer* offers = listCreateOffer();
 
+    dataFileShares(&shares);
+    dataFileOffer(&offers, &shares);
+    
     setlocale(LC_ALL, "Portuguese");
 
     do{
         logo();
-        printf("1 - Oferta;\n");
-        //printf("2 - Professor;\n");
-        //printf("3 - Disciplina;\n");
+        printf("1 - Ofertas;\n");
+        printf("2 - Ações;\n");
+        //printf("3 - ;\n");
         printf("4 - Sair;\n\n");
         printf("Escolha sua opção: ");
         scanf("%d", &option);
 
         switch (option){
-            case 1:mainOffer();break;    
-            case 2:break;    
+            case 1:mainOffer(offers, shares); break;    
+            case 2:mainShares(offers, shares); break;    
             case 3:break;
             case 4:
                 printf("Acesso finalizado!");

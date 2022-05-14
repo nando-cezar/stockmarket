@@ -3,7 +3,8 @@
     #define SHARESINPUT_H
 
     #include "../../utility/Utility.h"
-
+    #include "../Shares.h"
+    
     typedef struct detailsSharesInput {
 
         char name[255];
@@ -12,6 +13,6 @@
 
     } SharesInput;
 
-    SharesInput insertDataShares();
+    //SharesInput insertDataShares(void);
  
 #endif

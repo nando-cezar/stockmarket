@@ -34,30 +34,10 @@ void listUpdateShares(Shares** l, SharesInput sharesInput){
 void listRetrieveShares(Shares* l){
 
     Shares* p = NULL;
-    Buy* b = NULL;
-    Sell* s = NULL;
     
-    for(p = l; p != NULL; p = p->next){
-        printf("\nNome = %s\nSetor = %s\nSigla = %s\n", p->name, p->sector, p->signature);
-        if(p->buy != NULL){
-            printf("BUY\n");
-            for(b = p->buy; b != NULL; b = b->next){
-                printf("Quantidade: %d | Valor: %.2f\n", b->quantity, b->value);
-                getchar();
-            }
-        }
-        if(p->sell != NULL){
-            printf("SELL\n");
-            for(s = p->sell; s != NULL; s = s->next){
-                printf("Quantidade: %d | Valor: %.2f\n", s->quantity, s->value);
-                getchar();
-            }
-        }
-        getchar();
-    } 
-
-    free(b);
-    free(s);
+    for(p = l; p != NULL; p = p->next)
+        printf("\nNome\t= %s\nSetor\t= %s\nCódigo\t= %s\n", p->name, p->sector, p->signature);
+        
 }
 
 int listEmptyShares(Shares* l){ return (l == NULL); }

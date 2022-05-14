@@ -45,11 +45,11 @@ void listRetrieveOffer(Offer* l){
 
     Offer* p;
 
-    printf("\n\tHISTORICO DE COMPRA\n\n");
+    printf("\n* HISTORICO DE COMPRA\n\n");
     for(p = l; p != NULL; p = p->next)
         if(p->type == Buy_)
             printf(
-                "| %s | %d | %03d | R$ %.2f | %02d/%02d/%d - %d:%d:%d\n", 
+                "> %s | %d | %03d | R$ %.2f | %02d/%02d/%d - %02d:%02d:%02d\n", 
                 p->signature, 
                 p->type, 
                 p->quantity, 
@@ -62,11 +62,11 @@ void listRetrieveOffer(Offer* l){
                 p->clock->tm_sec
             );
 
-    printf("\n\tHISTORICO DE VENDA\n\n");
+    printf("\n* HISTORICO DE VENDA\n\n");
     for(p = l; p != NULL; p = p->next)
         if(p->type == Sell_)
             printf(
-                "| %s | %d | %03d | %.2f | %02d/%02d/%d - %d:%d:%d\n", 
+                "> %s | %d | %03d | R$ %.2f | %02d/%02d/%d - %02d:%02d:%02d\n", 
                 p->signature, 
                 p->type, 
                 p->quantity, 

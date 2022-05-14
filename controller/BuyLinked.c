@@ -27,7 +27,7 @@ void listRetrieveBuy(Buy* l){
     Buy* p;
     
     if(l != NULL) printf("\nOfertas de compra em aberto:\n\n");
-    else printf("Não contém ofertas de compra para esta ação!\n\n");
+    else printf("\nNão contém ofertas de compra para esta ação!\n\n");
     for(p = l; p != NULL; p = p->next) printf("R$ %.2f | %03d\n", p->value, p->quantity);
 
 }

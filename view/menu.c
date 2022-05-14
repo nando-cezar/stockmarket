@@ -31,7 +31,7 @@ void header(){
 }
 
 void menu(){
-
+    /*Ajustar horario, manter historico correto */
     int option;
     Shares* shares = listCreateShares();
     Offer* offers = listCreateOffer();

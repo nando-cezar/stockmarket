@@ -6,6 +6,7 @@
     
     #include "input/OfferInput.h"
     #include "Shares.h"
+    #include "Clock.h"
 
     typedef struct detailsOffer {
 
@@ -14,7 +15,7 @@
         int quantity;
         float value;
         char signature[10];
-        struct tm *clock;
+        struct detailsClock clock;
         struct detailsOffer *next;
 
     } Offer;

@@ -17,7 +17,14 @@ Offer* listInsertOffer(Offer* l, OfferInput offerInput){
     new->value = offerInput.value;
     time(&seconds);
     p = localtime(&seconds);
-    new->clock = p;
+    new->clock.tm_mday  = p->tm_mday;
+    new->clock.tm_mon   = p->tm_mon;
+    new->clock.tm_year  = p->tm_year;
+    new->clock.tm_hour  = p->tm_hour;
+    new->clock.tm_min   = p->tm_min;
+    new->clock.tm_sec   = p->tm_sec;
+    printf("%d:%d:%d\n", p->tm_hour, p->tm_min, p->tm_sec);
+    getchar();
     new->next = l;
 
     return new;
@@ -35,8 +42,12 @@ void listUpdateOffer(Offer** l,  OfferInput offerInput){
     new->value = offerInput.value;
     time(&seconds);
     p = localtime(&seconds);
-    new->clock = p;
-
+    new->clock.tm_mday  = p->tm_mday;
+    new->clock.tm_mon   = p->tm_mon;
+    new->clock.tm_year  = p->tm_year;
+    new->clock.tm_hour  = p->tm_hour;
+    new->clock.tm_min   = p->tm_min;
+    new->clock.tm_sec   = p->tm_sec;
     new->next = *l;
     *l = new;
 }
@@ -54,12 +65,12 @@ void listRetrieveOffer(Offer* l){
                 p->type, 
                 p->quantity, 
                 p->value, 
-                p->clock->tm_mday,
-                p->clock->tm_mon+1,
-                p->clock->tm_year+1900,
-                p->clock->tm_hour,
-                p->clock->tm_min,
-                p->clock->tm_sec
+                p->clock.tm_mday,
+                p->clock.tm_mon+1,
+                p->clock.tm_year+1900,
+                p->clock.tm_hour,
+                p->clock.tm_min,
+                p->clock.tm_sec
             );
 
     printf("\n* HISTORICO DE VENDA\n\n");
@@ -71,12 +82,12 @@ void listRetrieveOffer(Offer* l){
                 p->type, 
                 p->quantity, 
                 p->value, 
-                p->clock->tm_mday,
-                p->clock->tm_mon+1,
-                p->clock->tm_year+1900,
-                p->clock->tm_hour,
-                p->clock->tm_min,
-                p->clock->tm_sec
+                p->clock.tm_mday,
+                p->clock.tm_mon+1,
+                p->clock.tm_year+1900,
+                p->clock.tm_hour,
+                p->clock.tm_min,
+                p->clock.tm_sec
             );
 
 }

@@ -21,7 +21,7 @@ void retrieveSpecificShares(Shares** s){
     SharesOutput sharesOutput = searchDataShares(*s);
     
     shares = listSearchShares(*s, sharesOutput.signature);
-
+    
     listRetrieveBuy(shares->buy);
     listRetrieveSell(shares->sell);
 

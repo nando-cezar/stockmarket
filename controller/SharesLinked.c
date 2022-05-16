@@ -12,6 +12,7 @@ Shares* listInsertShares(Shares* l, SharesInput sharesInput){
     strcpy(new->name, sharesInput.name);
     strcpy(new->sector, sharesInput.sector);
     strcpy(new->signature, sharesInput.signature);
+    new->price = 0;
     new->buy = listCreateBuy();
     new->sell = listCreateSell();
     new->next = l;
@@ -25,6 +26,7 @@ void listUpdateShares(Shares** l, SharesInput sharesInput){
     strcpy(new->name, sharesInput.name);
     strcpy(new->sector, sharesInput.sector);
     strcpy(new->signature, sharesInput.signature);
+    new->price = 0;
     new->buy = listCreateBuy();
     new->sell = listCreateSell();
     new->next = *l;

@@ -19,8 +19,9 @@
     void    listUpdateSell(Sell** l, int q, float v);
     void    listRetrieveSell(Sell* l);
     int     listEmptySell(Sell* l);
-    Sell*   listSearchSell(Sell* l, int v);
-    Sell*   listDeleteSell(Sell* l, int v);
+    Sell*   listSearchSell(Sell* l, float v);
+    float   listSearchTopSell(Sell* l);
+    Sell*   listDeleteSell(Sell* l, float v);
     void    listReleaseSell(Sell *l);
     Sell*   listInsertSortedSell(Sell* l, int q, float v);
  

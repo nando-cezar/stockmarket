@@ -19,8 +19,9 @@
     void listUpdateBuy(Buy** l, int q, float v);
     void listRetrieveBuy(Buy* l);
     int  listEmptyBuy(Buy* l);
-    Buy* listSearchBuy(Buy* l, int v);
-    Buy* listDeleteBuy(Buy* l, int v);
+    Buy* listSearchBuy(Buy* l, float v);
+    float listSearchTopBuy(Buy* l);
+    Buy* listDeleteBuy(Buy* l, float v);
     void listReleaseBuy(Buy *l);
     Buy* listInsertSortedBuy(Buy* l, int q, float v);
  

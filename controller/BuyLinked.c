@@ -34,7 +34,7 @@ void listRetrieveBuy(Buy* l){
 
 int listEmptyBuy(Buy* l){ return (l == NULL); }
 
-Buy* listSearchBuy(Buy* l, int v){
+Buy* listSearchBuy(Buy* l, float v){
     Buy* p;
     for(p = l; p != NULL; p = p->next){
         if(p->value == v) return p;
@@ -42,7 +42,18 @@ Buy* listSearchBuy(Buy* l, int v){
     return NULL;
 }
 
-Buy* listDeleteBuy(Buy* l, int v){
+float listSearchTopBuy(Buy* l){
+    Buy* p = NULL;
+    float value = 0;
+
+    for(p = l; p != NULL; p = p->next){
+        value = p->value;
+    }
+
+    return value;
+}
+
+Buy* listDeleteBuy(Buy* l, float v){
 
     Buy* ant = NULL;
     Buy* p = l;

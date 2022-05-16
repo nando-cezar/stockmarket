@@ -10,6 +10,7 @@
         char name[255];
         char sector[50];
         char signature[10];
+        float price;
 
     } SharesInput;
 

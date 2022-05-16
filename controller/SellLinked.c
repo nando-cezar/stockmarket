@@ -34,7 +34,7 @@ void listRetrieveSell(Sell* l){
 
 int listEmptySell(Sell* l){ return (l == NULL); }
 
-Sell* listSearchSell(Sell* l, int v){
+Sell* listSearchSell(Sell* l, float v){
     Sell* p;
     for(p = l; p != NULL; p = p->next){
         if(p->value == v) return p;
@@ -42,7 +42,17 @@ Sell* listSearchSell(Sell* l, int v){
     return NULL;
 }
 
-Sell* listDeleteSell(Sell* l, int v){
+float listSearchTopSell(Sell* l){
+    Sell* p = NULL;
+    float value = 0;
+
+    for(p = l; p != NULL; p = p->next)
+        value = p->value;
+
+    return value;
+}
+
+Sell* listDeleteSell(Sell* l, float v){
 
     Sell* ant = NULL;
     Sell* p = l;

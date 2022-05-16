@@ -23,7 +23,7 @@ SharesOutput searchDataShares(Shares* s){
     dataSharesSearch = listSearchShares(s, data.signature);
 
     if(dataSharesSearch == NULL) printf("Informe codigo da ação válido!\n");
-    else printf("\nO papel %s, foi selecionado com sucesso!\n\n", dataSharesSearch->name);
+    else printf("\nO papel %s, foi selecionado com sucesso!\n\nA cotação atual: R$ %.2f\n\n", dataSharesSearch->name, dataSharesSearch->price);
     
   }while(dataSharesSearch == NULL);      
 

@@ -23,8 +23,6 @@ Offer* listInsertOffer(Offer* l, OfferInput offerInput){
     new->clock.tm_hour  = p->tm_hour;
     new->clock.tm_min   = p->tm_min;
     new->clock.tm_sec   = p->tm_sec;
-    printf("%d:%d:%d\n", p->tm_hour, p->tm_min, p->tm_sec);
-    getchar();
     new->next = l;
 
     return new;

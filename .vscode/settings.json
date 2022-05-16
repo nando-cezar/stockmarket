@@ -9,6 +9,7 @@
         "sharesinput.h": "c",
         "sharesview.h": "c",
         "offerview.h": "c",
-        "validation.h": "c"
+        "validation.h": "c",
+        "type_traits": "c"
     }
 }

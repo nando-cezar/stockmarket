@@ -46,9 +46,11 @@ float listSearchTopSell(Sell* l){
     Sell* p = NULL;
     float value = 0;
 
-    for(p = l; p != NULL; p = p->next)
+    for(p = l; p != NULL; p = p->next){
         value = p->value;
-
+        break;
+    }
+        
     return value;
 }
 

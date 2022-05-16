@@ -20,10 +20,10 @@ void retrieveSpecificShares(Shares** s){
     Shares *shares = NULL;
     SharesOutput sharesOutput = searchDataShares(*s);
     
-    shares = listSearchShares(*s, sharesOutput.signature);
+    *s = listSearchShares(*s, sharesOutput.signature);
     
-    listRetrieveBuy(shares->buy);
-    listRetrieveSell(shares->sell);
+    listRetrieveBuy((*s)->buy);
+    listRetrieveSell((*s)->sell);
 
     getchar();
 }

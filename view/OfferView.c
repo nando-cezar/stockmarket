@@ -22,8 +22,7 @@ OfferInput insertDataOffer(Shares* s){
     
     textToUpper(data.signature);
 
-    s = listSearchShares(s, data.signature);
-    dataSharesSearch = s;
+    dataSharesSearch = listSearchShares(s, data.signature);
 
     if(dataSharesSearch == NULL) printf("Informe codigo da ação válido!\n");
     else printf("\nO papel %s, foi selecionado com sucesso!\n\n", dataSharesSearch->name);
@@ -54,74 +53,10 @@ OfferInput insertDataOffer(Shares* s){
   data.value = validateFloat("Informe um valor válido!\nInforme valor: ");
   getchar();
 
-  /* Efetuar abstração para calculo */
-  /*float a = listSearchTopSell(s->sell);
-    float b = listSearchTopBuy(s->buy);
-    if(a < b){
-      s->price = (a + b) / 2; // cotação
-      printf("%.2f", data.value);
-      getchar();
-    } */
-  if(data.type == Buy_){
-    
-    float ts = listSearchTopSell(s->sell);
-
-    if(listSearchSell(s->sell, data.value) != NULL){
-      printf("Buy 1\n");
-      s->price = data.value;
-      if(s->sell->quantity == data.quantity){      
-        s->sell = listDeleteSell(s->sell, data.value); 
-      }else if(s->sell->quantity >= data.quantity){     
-        s->sell->quantity -= data.quantity;
-      }
-    }else if(ts < data.value && ts != 0){
-      printf("Buy 2\n");
-      s->price = (ts + data.value) / 2;
-      if(listSearchSell(s->sell, ts) != NULL){
-        if(s->sell->quantity == data.quantity){      
-          s->sell = listDeleteSell(s->sell, data.value); 
-        }else if(s->sell->quantity >= data.quantity){     
-          s->sell->quantity -= data.quantity;
-        }
-      }
-    }else{
-      printf("listInsertSortedBuy\n");
-      s->buy = listInsertSortedBuy(s->buy, data.quantity, data.value);
-    }
-
-  }else{
-
-    float tb = listSearchTopBuy(s->buy);
-
-    if(listSearchBuy(s->buy, data.value) != NULL){
-      printf("Sell  1\n");
-      s->price = data.value;
-      if(s->buy->quantity == data.quantity){
-        s->buy = listDeleteBuy(s->buy, data.value); 
-      }else if(s->buy->quantity >= data.quantity){
-        s->buy->quantity -= data.quantity;
-      }
-    }else if(tb > data.value && tb != 0){
-      s->price = (tb + data.value) / 2;
-      if(listSearchBuy(s->buy, tb) != NULL){     
-        if(s->buy->quantity == data.quantity){           
-          s->buy = listDeleteBuy(s->buy, data.value); 
-        }else if(s->buy->quantity >= data.quantity){     
-          printf("Sell 2\n");
-          s->buy->quantity -= data.quantity;
-        }
-      }
-    }else{
-      printf("listInsertSortedSell\n");
-      s->sell = listInsertSortedSell(s->sell, data.quantity, data.value);
-    } 
-  } 
-  /* ---------------------------- */
-
   return data;
 }
 
-void mainOffer(Offer *offers, Shares *shares){
+void mainOffer(Offer **offers, Shares **shares){
 
   int option;
 
@@ -138,8 +73,8 @@ void mainOffer(Offer *offers, Shares *shares){
     scanf("%d", &option);
     getchar();
     switch(option){
-      case 1:  insertOffer(&offers, &shares);break;
-      case 2:  retrieveOffer(&offers);break;
+      case 1:  insertOffer(offers, shares);break;
+      case 2:  retrieveOffer(offers);break;
       case 3:  break;
       default: 
         printf("Opção inválida!\n"); 

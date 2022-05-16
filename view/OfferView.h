@@ -5,6 +5,6 @@
     #include "../model/Offer.h"
     #include "../model/Shares.h"
     
-    void mainOffer(Offer *offers, Shares *shares);
+    void mainOffer(Offer **offers, Shares **shares);
 
 #endif

@@ -45,7 +45,7 @@ void listRetrieveShares(Shares* l){
 int listEmptyShares(Shares* l){ return (l == NULL); }
 
 Shares* listSearchShares(Shares* l, char *sg){
-    Shares* p;
+    Shares* p = NULL;
     for(p = l; p != NULL; p = p->next){
         if(strcmp(p->signature, sg) == 0) return p;
     }

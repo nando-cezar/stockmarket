@@ -48,6 +48,7 @@ float listSearchTopBuy(Buy* l){
 
     for(p = l; p != NULL; p = p->next){
         value = p->value;
+        break;
     }
 
     return value;
@@ -90,7 +91,7 @@ Buy* listInsertSortedBuy(Buy* l, int q, float v){
     Buy* p = l;
 
 
-    while(p != NULL && p->value < v){
+    while(p != NULL && p->value > v){
         ant = p;
         p = p->next;
     }

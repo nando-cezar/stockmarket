@@ -30,7 +30,7 @@ SharesOutput searchDataShares(Shares* s){
   return data;
 }
 
-void mainShares(Offer *offers, Shares *shares){
+void mainShares(Offer **offers, Shares **shares){
 
   int option;
 
@@ -47,8 +47,8 @@ void mainShares(Offer *offers, Shares *shares){
     scanf("%d", &option);
     getchar();
     switch(option){
-      case 1:  retrieveShares(&shares);break;
-      case 2:  retrieveSpecificShares(&shares);break;
+      case 1:  retrieveShares(shares);break;
+      case 2:  retrieveSpecificShares(shares);break;
       case 3:  break;
       default: 
         printf("Opção inválida!\n"); 

@@ -31,7 +31,7 @@ void header(){
 }
 
 void menu(){
-    /*Ajustar horario, manter historico correto */
+    /* Calculo da quantidade qunado for maior */
     int option;
     Shares* shares = listCreateShares();
     Offer* offers = listCreateOffer();
@@ -51,8 +51,8 @@ void menu(){
         scanf("%d", &option);
 
         switch (option){
-            case 1:mainOffer(offers, shares); break;    
-            case 2:mainShares(offers, shares); break;    
+            case 1:mainOffer(&offers, &shares); break;    
+            case 2:mainShares(&offers, &shares); break;    
             case 3:break;
             case 4:
                 printf("Acesso finalizado!");

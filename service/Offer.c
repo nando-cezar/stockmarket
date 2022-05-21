@@ -2,6 +2,7 @@
 #include "../global/function/Function.h"
 #include "../model/Offer.h"
 #include "../model/input/OfferInput.h"
+#include "../model/output/OfferOutput.h"
 #include "../view/Menu.h"
 
 void calculate(OfferInput *data, Shares *s);
@@ -22,9 +23,36 @@ void insertOffer(Offer** l, Shares** s){
 
 void retrieveOffer(Offer** l){
 
+    Offer* offer = NULL;
+    int alt = 0;
+
     header();
     
-    listRetrieveOffer(*l);
+    alt = filterSharesSearch();
+
+    switch(alt){
+        case 1: break;
+        case 2: 
+            offer = *l;
+            char signature[10];
+            printf("Informe a sigla: ");
+            fgets(signature, MAX_SIG, stdin);
+            removeBreakLine(signature);
+            textToUpper(signature);
+            listRetrieveOfferPerSignature(offer, signature); 
+        break;
+        case 3: 
+            offer = *l;
+            char op;
+            printf("Informe o tipo: ");
+            scanf(" %c", &op);
+            getchar();
+            listRetrieveOfferPerType(offer, op); 
+        break;
+        case 4: listRetrieveOffer(*l); break;
+        default: break;
+    }
+    
 
     getchar();
 }

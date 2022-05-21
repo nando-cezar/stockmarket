@@ -24,6 +24,8 @@
     Offer*  listCreateOffer(void);
     Offer*  listInsertOffer(Offer* l, OfferInput offerInput);
     void    listUpdateOffer(Offer** l, OfferInput offerInput);
+    void    listRetrieveOfferPerSignature(Offer* l, char *sg);
+    void    listRetrieveOfferPerType(Offer* l, int tp);
     void    listRetrieveOffer(Offer* l);
     int     listEmptyOffer(Offer* l);
     Offer*  listSearchOffer(Offer* l, int v);

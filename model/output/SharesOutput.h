@@ -15,5 +15,6 @@
     } SharesOutput;
 
     SharesOutput searchDataShares(Shares* s);
+    int quantitySelectedShares();
  
 #endif

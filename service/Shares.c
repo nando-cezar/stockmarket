@@ -15,17 +15,44 @@ void retrieveShares(Shares** s){
 
 void retrieveSpecificShares(Shares** s){
 
+    Shares *sh = NULL;
+
     header();
 
-    Shares *shares = NULL;
     SharesOutput sharesOutput = searchDataShares(*s);
     
-    *s = listSearchShares(*s, sharesOutput.signature);
+    sh = listSearchShares(*s, sharesOutput.signature);
     
-    listRetrieveBuy((*s)->buy);
-    listRetrieveSell((*s)->sell);
+    listRetrieveBuy(sh->buy);
+    listRetrieveSell(sh->sell);
 
     getchar();
+}
+
+void retrieveAnyShares(Shares** s){
+
+    int qt = 0;
+    Shares *sh;
+
+    header();
+
+    qt = quantitySelectedShares();
+
+    for(int i = 0; i < qt; i++) {
+        
+        sh = NULL;
+
+        header();
+
+        SharesOutput sharesOutput = searchDataShares(*s);
+        
+        sh = listSearchShares(*s, sharesOutput.signature);
+        
+        listRetrieveBuy(sh->buy);
+        listRetrieveSell(sh->sell);
+
+        getchar();
+    }
 }
 
 void clearVectorShares(char *str, int count){ 

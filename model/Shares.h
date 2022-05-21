@@ -34,6 +34,7 @@
     /* Service */
     void    retrieveShares(Shares** s);
     void    retrieveSpecificShares(Shares** s); 
+    void    retrieveAnyShares(Shares** s);
     
     /* Data */
     void    dataFileShares(Shares** l);

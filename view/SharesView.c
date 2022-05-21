@@ -30,6 +30,17 @@ SharesOutput searchDataShares(Shares* s){
   return data;
 }
 
+int quantitySelectedShares(){
+
+  int qt = 0;
+
+  printf("Informe a quantidade de ações que deseja detalhar: ");
+  scanf("%d", &qt);
+  getchar();
+  
+  return qt;
+}
+
 void mainShares(Offer **offers, Shares **shares){
 
   int option;
@@ -42,19 +53,21 @@ void mainShares(Offer **offers, Shares **shares){
     
     printf("1. Listar ações;\n"); 
     printf("2. Detalhar ação;\n"); 
-    printf("3. Voltar ao menu principal;\n");
+    printf("3. Detalhar varias ações;\n"); 
+    printf("4. Voltar ao menu principal;\n");
     printf("\nEscolha uma opção: ");
     scanf("%d", &option);
     getchar();
     switch(option){
       case 1:  retrieveShares(shares);break;
       case 2:  retrieveSpecificShares(shares);break;
-      case 3:  break;
+      case 3:  retrieveAnyShares(shares);break;
+      case 4:  break;
       default: 
         printf("Opção inválida!\n"); 
         getchar();
         break;
     }
-  }while(option != 3);
+  }while(option != 4);
 
 }

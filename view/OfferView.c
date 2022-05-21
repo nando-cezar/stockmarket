@@ -56,6 +56,17 @@ OfferInput insertDataOffer(Shares* s){
   return data;
 }
 
+int filterSharesSearch(){
+
+  int alt = 0;
+
+  printf("Informe qual opção de filtro.\n1-Data\t2-Sigla\t3-Tipo(Compra/Venda)");
+  scanf("%d", &alt);
+  getchar();
+  
+  return alt;
+}
+
 void mainOffer(Offer **offers, Shares **shares){
 
   int option;

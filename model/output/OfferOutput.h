@@ -15,5 +15,6 @@
     } OfferOutput;
 
     OfferOutput searchDataOffers(void);
+    int filterSharesSearch();
  
 #endif

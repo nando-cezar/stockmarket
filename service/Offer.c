@@ -23,7 +23,7 @@ void insertOffer(Offer** l, Shares** s){
 void retrieveOffer(Offer** l){
 
     header();
-
+    
     listRetrieveOffer(*l);
 
     getchar();

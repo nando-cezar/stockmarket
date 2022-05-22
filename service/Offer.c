@@ -47,6 +47,7 @@ void retrieveOffer(Offer** l){
             printf("Informe o tipo: ");
             scanf(" %c", &op);
             getchar();
+            op = toupper(op);
             listRetrieveOfferPerType(offer, op); 
         break;
         case 4: listRetrieveOffer(*l); break;

@@ -67,15 +67,19 @@ void listRetrieveOfferPerSignature(Offer* l, char *sg){
 
 }
 
-void listRetrieveOfferPerType(Offer* l, int tp){
+void listRetrieveOfferPerType(Offer* l, char tp){
 
+    int type;
     Offer* p;
 
-    if(tp == Buy_) printf("\n* HISTORICO DE COMPRA\n\n");
+    if(tp == 'C') type = Buy_;
+    else type = Sell_;
+
+    if(type == Buy_) printf("\n* HISTORICO DE COMPRA\n\n");
     else printf("\n* HISTORICO DE VENDA\n\n");
 
     for(p = l; p != NULL; p = p->next)
-        if(p->type == tp)
+        if(p->type == type)
             print(p);
 
 }

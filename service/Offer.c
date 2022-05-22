@@ -31,7 +31,14 @@ void retrieveOffer(Offer** l){
     alt = filterSharesSearch();
 
     switch(alt){
-        case 1: break;
+        case 1: 
+            offer = *l;
+            int d, m, y;
+            printf("Informe data (dd mm yyyy): ");
+            scanf("%d %d %d", &d, &m, &y);
+            getchar();
+            listRetrieveOfferPerDate(offer, d, m, y);
+        break;
         case 2: 
             offer = *l;
             char signature[10];

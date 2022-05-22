@@ -26,6 +26,7 @@
     void    listUpdateOffer(Offer** l, OfferInput offerInput);
     void    listRetrieveOfferPerSignature(Offer* l, char *sg);
     void    listRetrieveOfferPerType(Offer* l, char tp);
+    void    listRetrieveOfferPerDate(Offer* l, int d, int m, int y);
     void    listRetrieveOffer(Offer* l);
     int     listEmptyOffer(Offer* l);
     Offer*  listSearchOffer(Offer* l, int v);

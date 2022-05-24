@@ -29,7 +29,7 @@
     void    listRetrieveOfferPerDate(Offer* l, int d, int m, int y);
     void    listRetrieveOffer(Offer* l);
     int     listEmptyOffer(Offer* l);
-    Offer*  listSearchOffer(Offer* l, int v);
+    Offer*  listSearchOffer(Offer* l, char *sg);
     Offer*  listDeleteOffer(Offer* l, int v);
     void    listReleaseOffer(Offer *l);
 

@@ -10,6 +10,7 @@
         "sharesview.h": "c",
         "offerview.h": "c",
         "validation.h": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "date.h": "c"
     }
 }

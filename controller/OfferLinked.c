@@ -57,16 +57,13 @@ void listRetrieveOfferPerDate(Offer* l, int d, int m, int y){
 
     
     printf("\n* HISTORICO DE COMPRA\n\n");
-    for(p = l; p != NULL; p = p->next){
-        //printf("%d/%d/%d == %d/%d/%d\n", d, m, y, p->clock.tm_mday, p->clock.tm_mon, p->clock.tm_year);
+    for(p = l; p != NULL; p = p->next)
         if(p->clock.tm_mday == d && p->clock.tm_mon+1 == m && p->clock.tm_year+1900 == y && p->type == Buy_)
             print(p);
-    }
         
 
     printf("\n* HISTORICO DE VENDA\n\n");
     for(p = l; p != NULL; p = p->next)
-        //printf("%d/%d/%d == %d/%d/%d\n", d, m, y, p->clock.tm_mday, p->clock.tm_mon, p->clock.tm_year);
         if(p->clock.tm_mday == d && p->clock.tm_mon+1 == m && p->clock.tm_year+1900 == y && p->type == Sell_)
             print(p);
 
@@ -122,11 +119,11 @@ void listRetrieveOffer(Offer* l){
 }
 
 int listEmptyOffer(Offer* l){ return (l == NULL); }
-
-Offer* listSearchOffer(Offer* l, int v){
+ 
+Offer* listSearchOffer(Offer* l, char *sg){
     Offer* p;
     for(p = l; p != NULL; p = p->next){
-        if(p->value == v) return p;
+        if(strcmp(p->signature, sg) == 0) return p;
     }
     return NULL;
 }

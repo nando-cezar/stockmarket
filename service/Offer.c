@@ -1,6 +1,9 @@
 #include "../utility/Utility.h"
 #include "../global/function/Function.h"
+#include "../global/validation/Validation.h"
+#include "../model/Date.h"
 #include "../model/Offer.h"
+#include "../model/Shares.h"
 #include "../model/input/OfferInput.h"
 #include "../model/output/OfferOutput.h"
 #include "../view/Menu.h"
@@ -23,42 +26,58 @@ void insertOffer(Offer** l, Shares** s){
 
 void retrieveOffer(Offer** l){
 
-    Offer* offer = NULL;
-    int alt = 0;
+    Offer* offer = *l;
+    Offer* dataOfferSearch = listCreateOffer();
+    int verification;
+
+    Date date;
+    char signature[10];
+    char op;
 
     header();
     
-    alt = filterSharesSearch();
+    int alt = filterSharesSearch();
 
     switch(alt){
         case 1: 
-            offer = *l;
-            int d, m, y;
-            printf("Informe data (dd mm yyyy): ");
-            scanf("%d %d %d", &d, &m, &y);
-            getchar();
-            listRetrieveOfferPerDate(offer, d, m, y);
-        break;
+            do{     
+                printf("Informe data (dd mm yyyy): ");
+                scanf("%d %d %d", &date.day, &date.month, &date.year);
+                getchar();
+                verification = validateDate(date);
+                if(!verification) printf("\nInforme data válida!\n");
+            }while(!verification);
+            listRetrieveOfferPerDate(offer, date.day, date.month, date.year);
+            break;
         case 2: 
-            offer = *l;
-            char signature[10];
-            printf("Informe a sigla: ");
-            fgets(signature, MAX_SIG, stdin);
-            removeBreakLine(signature);
-            textToUpper(signature);
+            do{
+                printf("Informe a sigla: ");
+                fgets(signature, MAX_SIG, stdin);
+                removeBreakLine(signature);
+                textToUpper(signature);
+                dataOfferSearch = listSearchOffer(*l, signature);
+                if(dataOfferSearch == NULL) printf("Informe codigo da ação válido ou não existe oferta para ação selecionada!\n");
+            }while(dataOfferSearch == NULL);
             listRetrieveOfferPerSignature(offer, signature); 
-        break;
+            break;
         case 3: 
-            offer = *l;
-            char op;
-            printf("Informe o tipo: ");
-            scanf(" %c", &op);
-            getchar();
-            op = toupper(op);
+            do{
+                printf("Informe o tipo: ");
+                scanf(" %c", &op);
+                getchar();
+                op = toupper(op);
+                verification = validateOperation(op);
+
+                if(!verification) printf("\nInforme tipo de operação válida!\n");
+            }while(!verification);
             listRetrieveOfferPerType(offer, op); 
-        break;
-        case 4: listRetrieveOffer(*l); break;
-        default: break;
+            break;
+        case 4: 
+            listRetrieveOffer(*l); 
+            break;
+        default: 
+            printf("Entrada inválida!");
+            break;
     }
     
 

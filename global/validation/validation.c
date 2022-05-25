@@ -25,7 +25,7 @@ int validateInteger(char *str){
     while (scanf("%d", &value) != 1){
         static char temp[256];
         fgets(temp, sizeof(temp), stdin);
-        printf(str);
+        printf("%s",str);
     }
     return value;
 }
@@ -36,7 +36,7 @@ float validateFloat(char *str){
     while (scanf("%f", &value) != 1){
         static char temp[256];
         fgets(temp, sizeof(temp), stdin);
-        printf(str);
+        printf("%s",str);
     }
     return value;
 }

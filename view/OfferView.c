@@ -60,7 +60,7 @@ int filterSharesSearch(){
 
   int alt = 0;
 
-  printf("Informe qual opção de filtro.\n1-Data\t\t2-Sigla\t\t3-Tipo(Compra/Venda)\t\t4-Sem filtro\nSelecione: ");
+  printf("Informe qual opção de filtro.\n\n1 - Data\n2 - Sigla\n3 - Tipo(Compra/Venda)\n4 - Sem filtro\n\nSelecione: ");
   scanf("%d", &alt);
   getchar();
   

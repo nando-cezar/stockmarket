@@ -1,4 +1,4 @@
 
-gcc main.c controller/*.c service/*.c view/*.c global/function/*.c global/validation/*.c -o main
+gcc main.c controller/*.c service/*.c view/*.c global/function/*.c global/validation/*.c -o main -lm
 
 ./main

@@ -67,6 +67,24 @@ int filterSharesSearch(){
   return alt;
 }
 
+void printOfferES(float value, float topValue, float c){
+
+  printf("\n\n------------- Operação efetuada --------------\n\n");
+  printf("Preço ofertado: \tR$ %.2f\nPreço disponivel: \tR$ %.2f\n", value, topValue);
+  printf("Cotação atual: \tR$ %.2f", c);
+  printf("\n\n----------------------------------------------\n");
+
+}
+
+void printOfferNO(float value){
+
+  printf("\n\n-------------------------- Operação efetuada ----------------------------\n");
+  printf("\t..:: Valor disponivel para efetuar operações futuras ::..\n");
+  printf("\nValor ofertado: R$ %.2f\n", value);
+  printf("\n---------------------------------------------------------------------------\n");
+
+}
+
 void mainOffer(Offer **offers, Shares **shares){
 
   int option;

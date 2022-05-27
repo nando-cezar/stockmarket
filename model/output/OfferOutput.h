@@ -16,5 +16,7 @@
 
     OfferOutput searchDataOffers(void);
     int filterSharesSearch();
+    void printOfferES(float value, float topValue, float c);
+    void printOfferNO(float value);
  
 #endif

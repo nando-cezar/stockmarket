@@ -201,10 +201,13 @@ void calculate(OfferInput *data, Shares *s){
             //printf("Buy 1: %2.f\n", ts);
             sh->price = data->value;
             if(dataSell->quantity == data->quantity){ 
+                //data->quantity -= dataSell->quantity;
+                data->quantity = 0;
                 sh->sell = listDeleteSell(sh->sell, data->value);
                 printOfferES(data->value, ts, sh->price); 
             }else if(dataSell->quantity >= data->quantity){     
                 dataSell->quantity -= data->quantity;
+                data->quantity = 0;
                 sh->sell = listDeleteSell(sh->sell, data->value);
                 sh->sell = listInsertSortedSell(sh->sell, dataSell->quantity, data->value);
                 printOfferES(data->value, ts, sh->price); 
@@ -225,13 +228,15 @@ void calculate(OfferInput *data, Shares *s){
                 dataSell = listSearchSell(sh->sell, ts);
 
                 if(dataSell->quantity == data->quantity){      
-                    data->quantity -= dataSell->quantity;
+                    //data->quantity -= dataSell->quantity;
+                    data->quantity = 0;
                     sh->sell = listDeleteSell(sh->sell, ts); 
                     printOfferES(data->value, ts, sh->price);           
                 
                 }else if(dataSell->quantity >= data->quantity){
                     
                     dataSell->quantity -= data->quantity;
+                    data->quantity = 0;
                     sh->sell = listDeleteSell(sh->sell, data->value);
                     sh->sell = listInsertSortedSell(sh->sell, dataSell->quantity, data->value);
                     printOfferES(data->value, ts, sh->price); 
@@ -244,10 +249,13 @@ void calculate(OfferInput *data, Shares *s){
                     printOfferES(data->value, ts, sh->price); 
                 }
 
-                ts = listSearchTopSell(sh->sell);
-                
-            }while(ts < data->value);
+                if(data->quantity != 0)
+                    ts = listSearchTopSell(sh->sell);
+                else
+                    break;
 
+            }while(ts < data->value);
+            
             if(data->quantity > 0) 
                 sh->buy = listInsertSortedBuy(sh->buy, data->quantity, data->value);
             
@@ -271,6 +279,7 @@ void calculate(OfferInput *data, Shares *s){
                 printOfferES(data->value, tb, sh->price); 
             }else if(dataBuy->quantity >= data->quantity){
                 dataBuy->quantity -= data->quantity;
+                data->quantity = 0;
                 sh->buy = listDeleteBuy(sh->buy, data->value);
                 sh->buy = listInsertSortedBuy(sh->buy, dataBuy->quantity, data->value);
                 printOfferES(data->value, tb, sh->price); 
@@ -284,26 +293,42 @@ void calculate(OfferInput *data, Shares *s){
             }
         }else if(tb > data->value && tb != 0){
             
-            sh->price = (tb + data->value) / 2;
-            dataBuy = listSearchBuy(sh->buy, tb);
+            do{
+                sh->price = (tb + data->value) / 2;
+                dataBuy = listSearchBuy(sh->buy, tb);
 
-            if(dataBuy->quantity == data->quantity){           
-                sh->buy = listDeleteBuy(sh->buy, data->value); 
-                printOfferES(data->value, tb, sh->price); 
-            }else if(dataBuy->quantity >= data->quantity){    
-                dataBuy->quantity -= data->quantity;
-                sh->buy = listDeleteBuy(sh->buy, data->value);
-                //sh->buy = listInsertSortedBuy(sh->buy, dataBuy->quantity, data->value);
-                printOfferES(data->value, tb, sh->price); 
-            }else{
-                data->quantity -= dataBuy->quantity;
-                //sh->buy->quantity;
-                //printf("listDeleteBuy\n");
-                sh->buy = listDeleteBuy(sh->buy, tb);
-                sh->sell = listInsertSortedSell(sh->sell, data->quantity, data->value);
-                printOfferES(data->value, tb, sh->price); 
-            }
-                
+                if(dataBuy->quantity == data->quantity){    
+                    data->quantity -= dataBuy->quantity;       
+                    sh->buy = listDeleteBuy(sh->buy, tb); 
+                    printOfferES(data->value, tb, sh->price);
+                    
+                }else if(dataBuy->quantity >= data->quantity){    
+
+                    dataBuy->quantity -= data->quantity;
+                    data->quantity = 0;
+                    sh->buy = listDeleteBuy(sh->buy, data->value);
+                    //sh->buy = listInsertSortedBuy(sh->buy, dataBuy->quantity, data->value);
+                    printOfferES(data->value, tb, sh->price); 
+                    break;
+                }else{
+                    data->quantity -= dataBuy->quantity;
+                    //sh->buy->quantity;
+                    //printf("listDeleteBuy\n");
+                    sh->buy = listDeleteBuy(sh->buy, tb);
+                    //sh->sell = listInsertSortedSell(sh->sell, data->quantity, data->value);
+                    printOfferES(data->value, tb, sh->price); 
+                }
+
+                if(data->quantity != 0)
+                    tb = listSearchTopBuy(sh->buy);
+                else
+                    break;
+                    
+            }while(tb > data->value);
+
+            if(data->quantity > 0) 
+                sh->sell = listInsertSortedSell(sh->sell, data->quantity, data->value); 
+
         }else{
             //printf("listInsertSortedSell: %2.f\n", tb);
             sh->sell = listInsertSortedSell(sh->sell, data->quantity, data->value);

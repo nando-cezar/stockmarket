@@ -71,7 +71,7 @@ void printOfferES(float value, float topValue, float c){
 
   printf("\n\n------------- Operação efetuada --------------\n\n");
   printf("Preço ofertado: \tR$ %.2f\nPreço disponivel: \tR$ %.2f\n", value, topValue);
-  printf("Cotação atual: \tR$ %.2f", c);
+  printf("Cotação atual: \t\tR$ %.2f", c);
   printf("\n\n----------------------------------------------\n");
 
 }

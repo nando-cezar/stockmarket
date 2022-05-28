@@ -261,8 +261,16 @@ void calculate(OfferInput *data, Shares *s){
                 sh->buy = listInsertSortedBuy(sh->buy, data->quantity, data->value);
             
         }else{
-            sh->buy = listInsertSortedBuy(sh->buy, data->quantity, data->value);
-            printOfferNO(data->value); 
+
+            dataBuy = listSearchBuy(sh->buy, data->value);
+
+            if(dataBuy != NULL){
+                dataBuy->quantity += data->quantity;
+                printf("Valor já existente, a quantidade foi adicionada ao valor inserido.");
+            }else{
+                sh->buy = listInsertSortedBuy(sh->buy, data->quantity, data->value);
+                printOfferNO(data->value);
+            }     
         }
 
     }else{
@@ -335,8 +343,16 @@ void calculate(OfferInput *data, Shares *s){
                 sh->sell = listInsertSortedSell(sh->sell, data->quantity, data->value); 
 
         }else{
-            sh->sell = listInsertSortedSell(sh->sell, data->quantity, data->value);
-            printOfferNO(data->value); 
+
+            dataSell = listSearchSell(sh->sell, data->value);
+
+            if(dataSell != NULL){
+                dataSell->quantity += data->quantity;
+                printf("Valor já existente, a quantidade foi adicionada ao valor inserido.");
+            }else{
+                sh->sell = listInsertSortedSell(sh->sell, data->quantity, data->value);
+                printOfferNO(data->value); 
+            }
         } 
     }
 }

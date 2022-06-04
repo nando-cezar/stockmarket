@@ -1,4 +1,4 @@
-<h1> Projetos desenvolvido utilizando a linguagem C </h1>
+<h1> Projeto desenvolvido utilizando a linguagem C </h1>
 <p> Sejam bem-vindos ao projeto de LAB <strong> INF006 </strong> oferecido pelo <strong>Instituto Federal da Bahia</strong></a>.<br>
 
 <h2>🎯 Objetivo do Projeto</h2>
